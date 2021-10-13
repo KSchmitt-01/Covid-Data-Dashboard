@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Button from '@mui/material/Button'
+
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
@@ -14,8 +15,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Button variant="contained" color="primary" size="large">
+          {currentTime}
+        </Button>
         ... no changes in this part ...
-        <p>The current time is {currentTime}.</p>
+        <p>My example text is {currentTime}.</p>
       </header>
     </div>
   );
