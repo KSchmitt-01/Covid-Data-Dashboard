@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Button from '@mui/material/Button'
-
+import DashboardHeader from './components/header/DashboardHeader'
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
@@ -14,6 +14,7 @@ function App() {
 
   return (
     <div className="App">
+      <DashboardHeader/>
       <header className="App-header">
         <Button variant="contained" color="primary" size="large">
           {currentTime}
