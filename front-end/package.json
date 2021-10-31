@@ -14,13 +14,13 @@
     "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^4.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "start-backend": "cd ../back-end && flask run",
+    "start-backend": "cd ../back-end && python -m flask run",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

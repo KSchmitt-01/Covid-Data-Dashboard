@@ -6,11 +6,11 @@ import DashboardHeader from './components/header/DashboardHeader'
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
 
-  useEffect(() => {
-    fetch('/time').then(res => res.json()).then(data => {
-      setCurrentTime(data.testJson);
-    });
-  }, []);
+  useEffect(() =>
+    {fetch('/time').then(res => res.json()).then(data =>
+        {setCurrentTime(data.testJson);
+        });
+    }, []);
 
   return (
     <div className="App">
