@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Button from '@mui/material/Button'
 import DashboardHeader from './components/header/DashboardHeader'
+import Welcome from './components/Welcome'
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
@@ -12,6 +13,7 @@ function App() {
         });
     }, []);
 
+
   return (
     <div className="App">
       <DashboardHeader/>
@@ -21,7 +23,9 @@ function App() {
         </Button>
         ... no changes in this part ...
         <p>My example text is {currentTime}.</p>
+
       </header>
+         <Welcome/>
     </div>
   );
 }

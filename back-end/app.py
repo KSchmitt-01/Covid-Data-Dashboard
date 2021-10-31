@@ -8,6 +8,6 @@ app = Flask(__name__)
 def get_current_time():
     return {'testJson': 'Hello World'}
 
-@app.route('/test')
+@app.route('/bsuweekdata')
 def get_data():
     pullCovidData.pull_bsu_data()
