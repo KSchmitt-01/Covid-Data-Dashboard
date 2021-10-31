@@ -31,7 +31,7 @@ class Welcome extends Component {
             <Chart
               options={this.state.options}
               series={this.state.series}
-              type="bar"
+              type="line"
               width="500"
             />
           </div>
