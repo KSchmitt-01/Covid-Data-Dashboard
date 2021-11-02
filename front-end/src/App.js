@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Button from '@mui/material/Button'
 import DashboardHeader from './components/header/DashboardHeader'
+import Welcome from './components/Welcome'
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
 
-  useEffect(() => {
-    fetch('/time').then(res => res.json()).then(data => {
-      setCurrentTime(data.testJson);
-    });
-  }, []);
+  useEffect(() =>
+    {fetch('/time').then(res => res.json()).then(data =>
+        {setCurrentTime(data.testJson);
+        });
+    }, []);
+
 
   return (
     <div className="App">
@@ -21,7 +23,9 @@ function App() {
         </Button>
         ... no changes in this part ...
         <p>My example text is {currentTime}.</p>
+
       </header>
+         <Welcome/>
     </div>
   );
 }
