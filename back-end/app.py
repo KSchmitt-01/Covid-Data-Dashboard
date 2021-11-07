@@ -11,6 +11,6 @@ def get_current_time():
 def get_data():
     return filterData.parse_week_by_week_bsu()
 
-@app.route('/isolationbedoccupants')
+@app.route('/isolation-bed-occupants')
 def get_isolation_bed_occupants():
     return filterData.parse_isolation_capacity()

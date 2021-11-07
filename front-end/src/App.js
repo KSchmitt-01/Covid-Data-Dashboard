@@ -3,12 +3,13 @@ import './App.css';
 import Button from '@mui/material/Button'
 import DashboardHeader from './components/header/DashboardHeader'
 import Welcome from './components/Welcome'
+import SemiDoughnut from './components/graphs/SemiDoughnut';
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() =>
-    {fetch('/isolationbedoccupants').then(res => res.json()).then(data =>
+    {fetch('/isolation-bed-occupants').then(res => res.json()).then(data =>
         {setCurrentTime(data.Occupants);
         });
     }, []);
@@ -27,6 +28,7 @@ function App() {
 
       </header>
         <Welcome/>
+        <SemiDoughnut/>
     </div>
   );
 }
