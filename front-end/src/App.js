@@ -8,10 +8,11 @@ function App() {
   const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() =>
-    {fetch('/time').then(res => res.json()).then(data =>
-        {setCurrentTime(data.testJson);
+    {fetch('/isolationbedoccupants').then(res => res.json()).then(data =>
+        {setCurrentTime(data.Occupants);
         });
     }, []);
+
 
 
   return (
@@ -25,7 +26,7 @@ function App() {
         <p>My example text is {currentTime}.</p>
 
       </header>
-         <Welcome/>
+        <Welcome/>
     </div>
   );
 }
