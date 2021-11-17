@@ -31,5 +31,4 @@ def parse_isolation_capacity():
     "Occupants": isolationBedOccupants
     }
 
-
     return json.dumps(occupants)

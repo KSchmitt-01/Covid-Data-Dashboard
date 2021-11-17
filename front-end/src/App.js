@@ -14,18 +14,21 @@ function App() {
         });
     }, []);
 
-
-
   return (
     <div className="App">
+      {/* This should just be <DashboardView/> at the end of the project!!! */}
       <DashboardHeader/>
-        <Button variant="contained" color="primary" size="large">
-          {currentTime}
-        </Button>
-        ... no changes in this part ...
-        <p>My example text is {currentTime}.</p>
-        <Welcome/>
+      <div class="main">
+        <Welcome/> 
         <SemiDoughnut/>
+      </div>
+      <div>
+        <Button variant="contained" color="primary" size="large">
+            {currentTime}
+        </Button>
+          ... no changes in this part ...
+          <p>My example text is {currentTime}.</p>
+      </div>
     </div>
   );
 }
