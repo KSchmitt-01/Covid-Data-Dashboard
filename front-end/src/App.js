@@ -19,14 +19,11 @@ function App() {
   return (
     <div className="App">
       <DashboardHeader/>
-      <header className="App-header">
         <Button variant="contained" color="primary" size="large">
           {currentTime}
         </Button>
         ... no changes in this part ...
         <p>My example text is {currentTime}.</p>
-
-      </header>
         <Welcome/>
         <SemiDoughnut/>
     </div>
