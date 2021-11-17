@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Button from '@mui/material/Button'
-import DashboardHeader from './components/header/DashboardHeader'
-import Welcome from './components/Welcome'
-import SemiDoughnut from './components/graphs/SemiDoughnut';
+import DashboardView from './components/DashboardView';
+
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
@@ -17,11 +16,7 @@ function App() {
   return (
     <div className="App">
       {/* This should just be <DashboardView/> at the end of the project!!! */}
-      <DashboardHeader/>
-      <div class="main">
-        <Welcome/> 
-        <SemiDoughnut/>
-      </div>
+      <DashboardView/>
       <div>
         <Button variant="contained" color="primary" size="large">
             {currentTime}
