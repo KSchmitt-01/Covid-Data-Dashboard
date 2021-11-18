@@ -8,8 +8,8 @@ function App() {
   const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() =>
-    {fetch('/isolation-bed-occupants').then(res => res.json()).then(data =>
-        {setCurrentTime(data.Occupants);
+    {fetch('/school-year-cases').then(res => res.json()).then(data =>
+        {setCurrentTime(data.Total);
         });
     }, []);
 
