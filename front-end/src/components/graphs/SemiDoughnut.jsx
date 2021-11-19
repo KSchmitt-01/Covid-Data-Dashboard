@@ -1,41 +1,43 @@
-import React, { Component } from "react";
+import React, {useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 
-class SemiDoughnut extends Component {
-  constructor(props) {
-    super(props);
+function SemiDoughnut({selection}) {
+  const[occupants, setOccupants] = useState([50,50]);
 
-    this.state = {
-        series: [4, 96],
-        options: {
-          chart: {
-            type: 'donut',
-          },
-          responsive: [{
-            breakpoint: 480,
-            options: {
-              chart: {
-                width: 200
-              },
-              legend: {
-                position: 'bottom'
-              }
-            }
-          }]
-        },
-      };
-    }
+  let route = '/isolation-bed-occupants';
+  if(selection === "Boise State University"){
+    route = '/isolation-bed-occupants';
+  } else{
+    route = '/test-route';
+  }
 
+  useEffect(() =>
+    {fetch(route).then(res => res.json()).then(data =>
+        {setOccupants(data.Occupants);
+        });
+    }, [route, selection]);
 
-  render() {
     return (
       <div className="app">
         <div className="row">
           <div className="mixed-chart">
             <Chart
-              options={this.state.options}
-              series={this.state.series}
-              type={this.state.options.chart.type}
+              options={{
+                responsive: [{
+                  breakpoint: 480,
+                  options: {
+                    chart: {
+                      width: 200
+                    },
+                    legend: {
+                      position: 'bottom'
+                    }
+                  }
+                }]
+              }}
+              series={occupants}
+              labels={['test1', 'test2']}
+              type={'donut'}
               width="500"
             />
           </div>
@@ -43,6 +45,5 @@ class SemiDoughnut extends Component {
       </div>
     );
   }
-}
 
 export default SemiDoughnut;

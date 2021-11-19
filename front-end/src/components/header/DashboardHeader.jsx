@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles';
 import SchoolComboBox from './SchoolComboBox'
 
 
-function DashboardHeader(props) {
+function DashboardHeader({updateSchool}) {
     const useStyles = makeStyles({
         root: {
           marginBottom: 'auto',
@@ -15,7 +15,7 @@ function DashboardHeader(props) {
     return (
         <AppBar className={classes.root} color="primary">
             <h1>COVID-19 DATA DASHBOARD</h1>
-            <SchoolComboBox/>
+            <SchoolComboBox updateSelection={updateSchool}/>
 
             {/* <List component="nav">
                 <ListItem component="div">

@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import DashboardHeader from './header/DashboardHeader'
-import Welcome from './Welcome'
-import SemiDoughnut from './graphs/SemiDoughnut';
 import PageContainer from './PageContainer';
+import GraphWrapper from './graphs/GraphWrapper'
 
 function DashboardView() {
- //javascript logic goes here
-  return (
+ const [schoolSelection, setSchoolSelection] = useState('Boise State University');
+
+ return (
     <PageContainer className="flex-wrap space-around">
-        <DashboardHeader/>
-        <Welcome/>
-        <SemiDoughnut/>
+        <DashboardHeader updateSchool={setSchoolSelection}/>
+        <GraphWrapper selection={schoolSelection}/>
     </PageContainer>
   );
 }

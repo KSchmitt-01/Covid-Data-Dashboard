@@ -4,7 +4,7 @@ from pullCovidData import *
 dfDictbsu = pull_bsu_data()
 
 #gets the date and cases for that week returns as a json object
-def parse_week_by_week_bsu():
+def bsu_parse_week_by_week_bsu():
     #fetches the main sheet out of the bsu google sheet
     bsumain = dfDictbsu['bsu_0']
     #gets the data coulmums for Date and weekly cases
@@ -19,17 +19,17 @@ def parse_week_by_week_bsu():
         i+=1
     return json.dumps(dict)
 
-def parse_isolation_capacity():
+def bsu_parse_isolation_capacity():
     #fetches the main sheet out of the bsu google sheet
     bsumain = dfDictbsu['bsu_0']
     isolationBedOccupants = int(bsumain['Occ_Isolation_Beds'].iloc[0])
 
     occupants = {
-    "Occupants": isolationBedOccupants
+    "Occupants": [isolationBedOccupants, (100-isolationBedOccupants)]
     }
     return json.dumps(occupants)
 
-def parse_weekly_campus_cases():
+def bsu_parse_weekly_campus_cases():
     bsumain = dfDictbsu['bsu_0']
     weekly_cases = int(bsumain['Weekly_Cases'].iloc[0])
 
@@ -41,7 +41,7 @@ def parse_weekly_campus_cases():
     }
     return json.dumps(campus_cases)
 
-def parse_total_campus_cases():
+def bsu_parse_total_campus_cases():
     #total cases since 8/15/2021
     bsumain = dfDictbsu['bsu_0']
     total_cases = int(bsumain['Total_Cases'].iloc[0])
@@ -54,7 +54,7 @@ def parse_total_campus_cases():
     }
     return json.dumps(campus_cases)
 
-def parse_cases_since_school_start():
+def bsu_parse_cases_since_school_start():
     bsumain = dfDictbsu['bsu_0']
     start_index = bsumain.index[bsumain['Date'] == '8/12/2021']
     #total cases
@@ -65,5 +65,3 @@ def parse_cases_since_school_start():
         'Total': cases
     }
     return json.dumps(cases)
-
-
