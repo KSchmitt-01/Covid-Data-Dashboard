@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import PageContainer from '../PageContainer';
 import SemiDoughnut from './SemiDoughnut'
+import PieChart from './PieChart'
 import Welcome from './Welcome'
 
 
@@ -22,6 +23,7 @@ function GraphWrapper({selection}) {
     <PageContainer className={`${classes.root}`}>
         <Welcome/>
         <SemiDoughnut selection={selection}/>
+        <PieChart selection={selection}/>
     </PageContainer>
   );
 }
