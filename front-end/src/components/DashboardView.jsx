@@ -2,6 +2,7 @@ import React, { useState }  from 'react';
 import DashboardHeader from './header/DashboardHeader'
 import PageContainer from './PageContainer';
 import GraphWrapper from './graphs/GraphWrapper'
+import BasicCardWrapper from './cards/BasicCardWrapper';
 
 function DashboardView() {
  const [schoolSelection, setSchoolSelection] = useState('Boise State University');
@@ -10,6 +11,7 @@ function DashboardView() {
     <PageContainer className="flex-wrap space-around">
         <DashboardHeader updateSchool={setSchoolSelection}/>
         <GraphWrapper selection={schoolSelection}/>
+        <BasicCardWrapper />
     </PageContainer>
   );
 }
