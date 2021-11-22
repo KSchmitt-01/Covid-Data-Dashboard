@@ -12,12 +12,12 @@ const useStyles = makeStyles({
   });
 
   const dataOptions = [
-    { label: 'Boise State University', color:"#EF5350" },
-    { label: 'Idaho State University', color:"#EF5350" },
+    { label: 'Boise State University', color:"#efb050" },
+    { label: 'Idaho State University', color:"#efb050" },
 ];
 
-export default function SchoolComboBox() {
-  const styles = useStyles();  
+export default function SchoolComboBox({updateSelection}) {
+  const styles = useStyles();
   return (
     <Autocomplete
         id="combo-box-demo"
@@ -27,13 +27,20 @@ export default function SchoolComboBox() {
             option: styles.option
         }}
         getOptionLabel={(option) => option.label}
+        onChange={(event, newSelection) => {
+          if(newSelection == null){
+            updateSelection('Boise State University');
+          } else{
+            updateSelection(newSelection.label);
+          }
+        }}
         style={{ width: 300 }}
         renderOption={(props, option) => {
             const { label, color } = option;
             return (
                 <span {...props} style={{ backgroundColor: color }}>
                 {label}
-                </span>
+                 </span>
             );
         }}
         renderInput={(params) => {

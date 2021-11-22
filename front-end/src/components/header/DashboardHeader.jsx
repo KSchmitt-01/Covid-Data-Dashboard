@@ -1,16 +1,21 @@
 import React from 'react';
-// import List from '@material-ui/core/List';
-// import ListItem from '@material-ui/core/ListItem';
-// import ListItemText from '@material-ui/core/ListItemText';
 import { AppBar } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import SchoolComboBox from './SchoolComboBox'
 
 
-function DashboardHeader(props) {
+function DashboardHeader({updateSchool}) {
+    const useStyles = makeStyles({
+        root: {
+          marginBottom: 'auto',
+        },
+      });
+    const classes = useStyles()
+
     return (
-        <AppBar color="primary">
+        <AppBar className={classes.root} color="primary">
             <h1>COVID-19 DATA DASHBOARD</h1>
-            <SchoolComboBox/>
+            <SchoolComboBox updateSelection={updateSchool}/>
 
             {/* <List component="nav">
                 <ListItem component="div">

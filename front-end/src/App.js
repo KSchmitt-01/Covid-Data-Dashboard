@@ -1,31 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Button from '@mui/material/Button'
-import DashboardHeader from './components/header/DashboardHeader'
-import Welcome from './components/Welcome'
+import DashboardView from './components/DashboardView';
+
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() =>
-    {fetch('/time').then(res => res.json()).then(data =>
-        {setCurrentTime(data.testJson);
+    {fetch('/school-year-cases').then(res => res.json()).then(data =>
+        {setCurrentTime(data.Total);
         });
     }, []);
 
-
   return (
     <div className="App">
-      <DashboardHeader/>
-      <header className="App-header">
+      {/* This should just be <DashboardView/> at the end of the project!!! */}
+      <DashboardView/>
+      <div>
         <Button variant="contained" color="primary" size="large">
-          {currentTime}
+            {currentTime}
         </Button>
-        ... no changes in this part ...
-        <p>My example text is {currentTime}.</p>
-
-      </header>
-         <Welcome/>
+          ... no changes in this part ...
+          <p>My example text is {currentTime}.</p>
+      </div>
     </div>
   );
 }
