@@ -23,7 +23,7 @@ export default function BasicCard({value, description}) {
           <Typography variant="h4">
             {value}
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="body2">
             {description}
           </Typography>
       </CardContent>

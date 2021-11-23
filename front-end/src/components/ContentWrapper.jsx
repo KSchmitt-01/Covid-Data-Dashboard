@@ -7,8 +7,8 @@ function ContentWrapper({schoolSelection}) {
  return (
     <PageContainer className="float">
         <div>
-        <BasicCardWrapper/>
-        <GraphWrapper selection={schoolSelection}/>
+          <BasicCardWrapper selection={schoolSelection}/>
+          <GraphWrapper selection={schoolSelection}/>
         </div>
     </PageContainer>
   );

@@ -1,8 +1,6 @@
 import React, { useState }  from 'react';
 import DashboardHeader from './header/DashboardHeader'
 import PageContainer from './PageContainer';
-import GraphWrapper from './graphs/GraphWrapper'
-import BasicCardWrapper from './cards/BasicCardWrapper';
 import ContentWrapper from './ContentWrapper'
 
 function DashboardView() {
