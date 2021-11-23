@@ -65,3 +65,24 @@ def bsu_parse_cases_since_school_start():
         'Total': cases
     }
     return json.dumps(cases)
+
+def bsu_parse_week_by_week():
+    #fetches the main sheet out of the bsu google sheet
+    bsumain = dfDictbsu['bsu_0']
+    #gets the data coulmums for Date and weekly cases
+    bsudate = bsumain['Date']
+    bsuweeklycases = bsumain['Weekly_Cases']
+
+    rstring = "["
+    i = 0
+    length = len(bsudate)
+    while  i < length:
+        rstring+='{"date": "'+bsudate[i]+'",'
+        rstring+='"cases": '+str(bsuweeklycases[i])
+        if i+1 == length:
+            rstring += '}'
+        else:
+            rstring += '},'
+        i+=1
+    rstring += "]"
+    return rstring

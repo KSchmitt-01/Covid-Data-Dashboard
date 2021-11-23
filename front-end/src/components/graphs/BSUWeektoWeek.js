@@ -2,9 +2,6 @@ import React, {Component, useEffect, useState} from "react";
 import Chart from "react-apexcharts";
 
 
-
-
-
 class BSUWeektoWeek extends React.Component {
 
   async componentDidMount() {
@@ -54,64 +51,62 @@ class BSUWeektoWeek extends React.Component {
           fontFamily:  undefined,
           color:  '#000000'
         },
-}
-
+      }
     })
-
 
     console.log(this.state.options.xaxis.categories)
   }
 
-    state = {
-      options: {
-        chart: {
-          id: "basic-bar"
-        },
-        xaxis: {
-                noData: {
-  text: "Loading...",
-  align: 'center',
-  verticalAlign: 'middle',
-  offsetX: 0,
-  offsetY: 0,
-  style: {
-    color: "#000000" ,
-    fontSize: '14px',
-    fontFamily: "Times New Roman"
-  }
-}
-        }
+  state = {
+    options: {
+      chart: {
+        id: "basic-bar"
       },
-      series: [
-        {
-          name: "series-1",
-                noData: {
-  text: "Loading...",
-  align: 'center',
-  verticalAlign: 'middle',
-  offsetX: 0,
-  offsetY: 0,
-  style: {
-    color: "#000000" ,
-    fontSize: '14px',
-    fontFamily: "Times New Roman"
-  }
-}
+      xaxis: {
+        noData: {
+          text: "Loading...",
+          align: 'center',
+          verticalAlign: 'middle',
+          offsetX: 0,
+          offsetY: 0,
+          style: {
+            color: "#000000" ,
+            fontSize: '14px',
+            fontFamily: "Times New Roman"
+          }
         }
-      ],
-      noData: {
-  text: "Loading...",
-  align: 'center',
-  verticalAlign: 'middle',
-  offsetX: 0,
-  offsetY: 0,
-  style: {
-    color: "#000000" ,
-    fontSize: '14px',
-    fontFamily: "Times New Roman"
-  }
-}
-    };
+      }
+    },
+    series: [
+      {
+        name: "series-1",
+        noData: {
+          text: "Loading...",
+          align: 'center',
+          verticalAlign: 'middle',
+          offsetX: 0,
+          offsetY: 0,
+          style: {
+            color: "#000000" ,
+            fontSize: '14px',
+            fontFamily: "Times New Roman"
+          }
+        }
+      }
+    ],
+    noData: {
+      text: "Loading...",
+      align: 'center',
+      verticalAlign: 'middle',
+      offsetX: 0,
+      offsetY: 0,
+      style: {
+        color: "#000000" ,
+        fontSize: '14px',
+        fontFamily: "Times New Roman"
+      }
+    }
+  };
 
   render() {
     return (
