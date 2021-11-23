@@ -32,6 +32,7 @@ class BSUWeektoWeek extends React.Component {
           id: "basic-bar"
         }, xaxis: {
           categories: dates
+
         }
       },
       series: [
@@ -39,7 +40,22 @@ class BSUWeektoWeek extends React.Component {
           name: "Cases",
           data: cases
         },
-      ]
+      ],
+      title: {
+        text: "test",
+        align: 'left',
+        margin: 10,
+        offsetX: 0,
+        offsetY: 0,
+        floating: false,
+        style: {
+          fontSize:  '14px',
+          fontWeight:  'bold',
+          fontFamily:  undefined,
+          color:  '#000000'
+        },
+}
+
     })
 
 
@@ -52,15 +68,49 @@ class BSUWeektoWeek extends React.Component {
           id: "basic-bar"
         },
         xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+                noData: {
+  text: "Loading...",
+  align: 'center',
+  verticalAlign: 'middle',
+  offsetX: 0,
+  offsetY: 0,
+  style: {
+    color: "#000000" ,
+    fontSize: '14px',
+    fontFamily: "Times New Roman"
+  }
+}
         }
       },
       series: [
         {
           name: "series-1",
-          data: [30, 40, 45, 50, 49, 60, 70, 91]
+                noData: {
+  text: "Loading...",
+  align: 'center',
+  verticalAlign: 'middle',
+  offsetX: 0,
+  offsetY: 0,
+  style: {
+    color: "#000000" ,
+    fontSize: '14px',
+    fontFamily: "Times New Roman"
+  }
+}
         }
-      ]
+      ],
+      noData: {
+  text: "Loading...",
+  align: 'center',
+  verticalAlign: 'middle',
+  offsetX: 0,
+  offsetY: 0,
+  style: {
+    color: "#000000" ,
+    fontSize: '14px',
+    fontFamily: "Times New Roman"
+  }
+}
     };
 
   render() {
