@@ -3,7 +3,7 @@ import DashboardHeader from './header/DashboardHeader'
 import PageContainer from './PageContainer';
 import GraphWrapper from './graphs/GraphWrapper'
 import BasicCardWrapper from './cards/BasicCardWrapper';
-import Test from './test'
+import ContentWrapper from './ContentWrapper'
 
 function DashboardView() {
  const [schoolSelection, setSchoolSelection] = useState('Boise State University');
@@ -11,7 +11,7 @@ function DashboardView() {
  return (
     <PageContainer className="space-around">
         <DashboardHeader updateSchool={setSchoolSelection}/>
-        <Test schoolSelection={schoolSelection}/>
+        <ContentWrapper schoolSelection={schoolSelection}/>
     </PageContainer>
   );
 }
