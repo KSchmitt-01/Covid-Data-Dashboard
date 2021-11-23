@@ -7,6 +7,7 @@ import BasicCard from './BasicCard';
 const useStyles = makeStyles({
   root: {
        marginTop: '200px',
+       height: '200px',
        padding: '50px',
        backgroundColor: '#ECEFF1',
     }
@@ -18,7 +19,10 @@ function BasicCardWrapper() {
 
   return (
     <PageContainer className={`${classes.root}`}>
-        <BasicCard />
+        <BasicCard value={702} description={"A sample description"}/>
+        <BasicCard value={12} description={"A sample description"}/>
+        <BasicCard value={1} description={"A sample description"}/>
+        <BasicCard value={1002} description={"A sample description"}/>
     </PageContainer>
   );
 }
