@@ -12,8 +12,8 @@ const useStyles = makeStyles({
   });
 
   const dataOptions = [
-    { label: 'Boise State University', color:"#efb050" },
-    { label: 'Idaho State University', color:"#efb050" },
+    { label: 'Boise State University', color:"#428fff" },
+    { label: 'Idaho State University', color:"#f69240" },
 ];
 
 export default function SchoolComboBox({updateSelection}) {

@@ -6,12 +6,15 @@ function BSUWeektoWeek({selection}) {
   const [dates, setDates] = useState([]);
   const [cases, setCases] = useState([]);
 
+  let coulor = ['#0033A0']
   let route = '/bsuweekdata';
 
   if (selection === "Boise State University") {
     route = '/bsuweekdata';
+    coulor = ['#0033A0']
   } else {
     route = '/isuweekdata';
+    coulor = ['#F47920']
   }
 
   useEffect(() =>
@@ -46,8 +49,27 @@ function BSUWeektoWeek({selection}) {
                       id: "basic-bar"
                     },
                     xaxis: {
-                      categories: dates
-                    }
+                      categories: dates,
+                      labels: {
+                                show: true,
+                                title: {
+                                    text: "Weeks",
+                                    maxWidth: 200,
+                                    style: {
+                                        fontSize: '80px'
+                                    }
+                                }
+                      }
+                    },
+                    yaxis: {
+                      title: {
+                          text: 'Cases',
+                            style: {
+                              fontSize: '24px'
+                            }
+                      }
+                    },
+                    colors:coulor
                 }}
                 series={[{
 

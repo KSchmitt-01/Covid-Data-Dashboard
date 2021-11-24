@@ -74,7 +74,7 @@ def bsu_parse_week_by_week():
     bsuweeklycases = bsumain['Weekly_Cases']
 
     rstring = "["
-    i = 0
+    i = 1
     length = len(bsudate)
     while  i < length:
         rstring+='{"date": "'+bsudate[i]+'",'

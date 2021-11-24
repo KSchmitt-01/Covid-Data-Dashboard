@@ -21,7 +21,6 @@ function GraphWrapper({selection}) {
   return (
     <PageContainer className={`${classes.root}`}>
         <BSUWeektoWeek selection={selection}/>
-        <h1>     </h1>
         <SemiDoughnut selection={selection}/>
     </PageContainer>
   );
