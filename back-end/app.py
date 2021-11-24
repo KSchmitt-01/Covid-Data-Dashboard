@@ -6,8 +6,12 @@ app = Flask(__name__)
 
 
 @app.route('/bsuweekdata')
-def get_data_week_by_week():
+def get_bsu_data_week_by_week():
     return bsu_parse_week_by_week()
+
+@app.route('/isuweekdata')
+def get_isu_data_week_by_week():
+    return isu_parse_week_by_week()
 
 @app.route('/isolation-bed-occupants')
 def get_isolation_bed_occupants():
