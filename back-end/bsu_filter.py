@@ -41,6 +41,17 @@ def bsu_parse_weekly_campus_cases():
     }
     return json.dumps(campus_cases)
 
+def bsu_parse_get_total_vaccines_per_type():
+    bsuvaccinations = dfDictbsu['bsu_2125453347']
+
+    total_vaccinations = {
+        'moderna': int(bsuvaccinations['Moderna Vaccine (Total)'].iloc[0]),
+        'pfizer': int(bsuvaccinations['Pfizer Vaccine (Total)'].iloc[0]),
+        'j&j': int(bsuvaccinations['Johnson & Johnson Vaccine (Total)'].iloc[0])
+    }
+
+    return json.dumps(total_vaccinations)
+
 def bsu_parse_total_campus_cases():
     #total cases since 8/15/2021
     bsumain = dfDictbsu['bsu_0']

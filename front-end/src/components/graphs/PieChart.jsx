@@ -7,9 +7,9 @@ var chosenColors = ["#000000", "#FFFFFF"];
 function PieChart({selection}) {
   const[occupants, setOccupants] = useState([50,50]);
 
-  let route = '/isolation-bed-occupants';
+  let route = '/total-vaccinations-per-type';
   if(selection === "Boise State University"){
-    route = '/isolation-bed-occupants';
+    route = '/total-vaccinations-per-type';
     //Sets colors to blue and orange - One will need to be specified for each section of chart
     chosenColors = ["#0000FF", "#FFA500"];
   } else if(selection === "Idaho State University"){
@@ -35,7 +35,7 @@ function PieChart({selection}) {
 
             <Chart
               options={{
-                colors: [chosenColors[0], chosenColors[1]],
+                colors: [chosenColors[0], chosenColors[1], "#FFFFFF"],
                 responsive: [{
                   breakpoint: 480,
                   options: {
@@ -46,10 +46,9 @@ function PieChart({selection}) {
                       position: 'bottom'
                     }
                   }
-                }]
+                }],
               }}
               series={occupants}
-              labels={['test1', 'test2']}
               type={'pie'}
               width="500"
             />
