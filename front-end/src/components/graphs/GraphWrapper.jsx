@@ -15,6 +15,29 @@ const useStyles = makeStyles({
   },
 });
 
+var options = {
+  title:{
+    text: "Total Vaccine Count Based on Type",
+    align: 'center',
+    floating: false,
+    style:{
+      color: '#000000'
+    }
+  },
+  colors: ["#0000FF", "#FFA500", "#d3d3d3"],
+  labels: ["Moderna", "Pfizer", "Johnson & Johnson"],
+  responsive: [{
+    breakpoint: 480,
+    options: {
+      chart: {
+        width: 200
+      },
+      legend: {
+        position: 'bottom'
+      }
+    }
+  }],
+}
 
 function GraphWrapper({selection}) {
     const classes = useStyles();
@@ -23,7 +46,7 @@ function GraphWrapper({selection}) {
     <PageContainer className={`${classes.root}`}>
         <BSUWeektoWeek/>
         <SemiDoughnut selection={selection}/>
-        <PieChart selection={selection}/>
+        <PieChart selection={selection} options={options}/>
     </PageContainer>
   );
 }

@@ -10,6 +10,7 @@ class BSUWeektoWeek extends React.Component {
   async componentDidMount() {
     const res = await fetch('/bsuweekdata')
     const data = await res.json();
+    console.log(data)
 
     const dates = []
     const cases = []

@@ -31,23 +31,24 @@ def bsu_parse_isolation_capacity():
 
 def bsu_parse_weekly_campus_cases():
     bsumain = dfDictbsu['bsu_0']
-    weekly_cases = int(bsumain['Weekly_Cases'].iloc[0])
+    weekly_cases = int(bsumain['Weekly_Cases'].iloc[1])
 
     campus_cases = {
         'Weekly': weekly_cases,
-        'OnCampus': int(bsumain['On-Campus_In_Person'].iloc[0]),
-        'OffCampus': int(bsumain['Off_Campus_In_Person'].iloc[0]),
-        'Faculty': int(bsumain['Faculty/Staff'].iloc[0])
+        'OnCampus': int(bsumain['On-Campus_In_Person'].iloc[1]),
+        'OffCampus': int(bsumain['Off_Campus_In_Person'].iloc[1]),
+        'Faculty': int(bsumain['Faculty/Staff'].iloc[1])
     }
     return json.dumps(campus_cases)
 
 def bsu_parse_get_total_vaccines_per_type():
     bsuvaccinations = dfDictbsu['bsu_2125453347']
+    moderna =int(bsuvaccinations['Moderna Vaccine (Total)'].iloc[1])
+    pfizer = int(bsuvaccinations['Pfizer Vaccine (Total)'].iloc[1])
+    jj =int(bsuvaccinations['Johnson & Johnson Vaccine (Total)'].iloc[1])
 
     total_vaccinations = {
-        'moderna': int(bsuvaccinations['Moderna Vaccine (Total)'].iloc[0]),
-        'pfizer': int(bsuvaccinations['Pfizer Vaccine (Total)'].iloc[0]),
-        'j&j': int(bsuvaccinations['Johnson & Johnson Vaccine (Total)'].iloc[0])
+        'vaccinations': [moderna, pfizer, jj]
     }
 
     return json.dumps(total_vaccinations)
@@ -55,13 +56,13 @@ def bsu_parse_get_total_vaccines_per_type():
 def bsu_parse_total_campus_cases():
     #total cases since 8/15/2021
     bsumain = dfDictbsu['bsu_0']
-    total_cases = int(bsumain['Total_Cases'].iloc[0])
+    total_cases = int(bsumain['Total_Cases'].iloc[1])
     print(total_cases)
     campus_cases = {
         'Total': total_cases,
-        'OnCampus': int(bsumain['Total_On-Campus_In_Person'].iloc[0]),
-        'OffCampus': int(bsumain['Total_Off_Campus_In_Person'].iloc[0]),
-        'Faculty': int(bsumain['Total Faculty/Staff'].iloc[0])
+        'OnCampus': int(bsumain['Total_On-Campus_In_Person'].iloc[1]),
+        'OffCampus': int(bsumain['Total_Off_Campus_In_Person'].iloc[1]),
+        'Faculty': int(bsumain['Total Faculty/Staff'].iloc[1])
     }
     return json.dumps(campus_cases)
 
@@ -70,7 +71,7 @@ def bsu_parse_cases_since_school_start():
     start_index = bsumain.index[bsumain['Date'] == '8/12/2021']
     #total cases
     start_cases = int(bsumain['Total_Cases'].iloc[start_index])
-    total_cases = int(bsumain['Total_Cases'].iloc[0])
+    total_cases = int(bsumain['Total_Cases'].iloc[1])
     cases = total_cases - start_cases
     cases = {
         'Total': cases
