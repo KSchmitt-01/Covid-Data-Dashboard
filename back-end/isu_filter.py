@@ -3,14 +3,17 @@ from pullCovidData import *
 
 isumain = pull_isu_data()
 
+#faculty vs student cases
 def isu_parse_cases_by_category():
     isumain = dfDictisu['isu_989892343']
     student_cases = int(isumain.iloc[0,1])
     faculty_cases = int(isumain.iloc[1,1])
-    print(student_cases, faculty_cases)
-
     cases = {
-        'Occupants': [student_cases, faculty_cases] #probably should change property name
+        'Total': [student_cases, faculty_cases],
+        'Title': 'Total Cases by Category',
+        "Labels": ["Students", "Faculty/Staff"],
+        "Colors": ["#828282", "#f69240"]
+
     }
     return json.dumps(cases)
 

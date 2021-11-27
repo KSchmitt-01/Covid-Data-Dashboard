@@ -3,6 +3,9 @@ import Chart from "react-apexcharts";
 
 function SemiDoughnut({selection}) {
   const[occupants, setOccupants] = useState([50,50]);
+  const[title, setTitle] = useState('Isolation Capacity');
+  const[labels, setLabels] = useState(["Occupied Beds (%)", "Avaliable Beds (%)"]);
+  const[colors, setColors] = useState(["#0033A0", "#D64309"]);
 
   let route = '/isolation-bed-occupants';
   if(selection === "Boise State University"){
@@ -13,7 +16,11 @@ function SemiDoughnut({selection}) {
 
   useEffect(() =>
     {fetch(route).then(res => res.json()).then(data =>
-        {setOccupants(data.Occupants);
+        {
+          setOccupants(data.Total);
+          setTitle(data.Title);
+          setLabels(data.Labels);
+          setColors(data.Colors);
         });
     }, [route, selection]);
 
@@ -23,6 +30,17 @@ function SemiDoughnut({selection}) {
           <div className="mixed-chart">
             <Chart
               options={{
+                colors: colors,
+                title: {
+                  text: title,
+                  align: 'Center',
+                  style: {
+                    fontSize:  '24px',
+                    fontWeight:  'bold',
+                    color:  '#263238'
+                  },
+                },
+                labels: labels,
                 responsive: [{
                   breakpoint: 480,
                   options: {
