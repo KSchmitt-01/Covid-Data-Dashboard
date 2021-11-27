@@ -6,9 +6,12 @@ app = Flask(__name__)
 
 
 @app.route('/bsuweekdata')
-def get_data():
-    return parse_week_by_week_bsu()
+def get_bsu_data_week_by_week():
+    return bsu_parse_week_by_week()
 
+@app.route('/isuweekdata')
+def get_isu_data_week_by_week():
+    return isu_parse_week_by_week()
 
 @app.route('/isolation-bed-occupants')
 def get_isolation_bed_occupants():
@@ -26,6 +29,14 @@ def get_total_campus_cases():
 def get_total_school_year_cases():
     return bsu_parse_cases_since_school_start()
 
+@app.route('/total-vaccinations-per-type')
+def get_total_vaccines_per_type():
+    return bsu_parse_get_total_vaccines_per_type()
+
+@app.route('/total_cases_by_location')
+def get_total_cases_by_location():
+    return isu_parse_total_cases_by_location()
+    
 @app.route('/weekly-positive-tests')
 def get_weekly_positive_tests():
     return bsu_parse_weekly_positive_tests()

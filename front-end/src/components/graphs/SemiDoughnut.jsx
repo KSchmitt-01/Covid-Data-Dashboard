@@ -1,6 +1,9 @@
 import React, {useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 
+//By default colors are white and black
+var chosenColors = ["#000000", "#FFFFFF"];
+
 function SemiDoughnut({selection}) {
   const[occupants, setOccupants] = useState([50,50]);
   const[title, setTitle] = useState('Isolation Capacity');
@@ -10,7 +13,13 @@ function SemiDoughnut({selection}) {
   let route = '/isolation-bed-occupants';
   if(selection === "Boise State University"){
     route = '/isolation-bed-occupants';
-  } else{
+    //Sets colors to blue and orange - One will need to be specified for each section of chart
+    chosenColors = ["#0033A0", "#D64309"];
+  } else if(selection === "Idaho State University"){
+    route = '/test-route';
+    //Sets colors to black and orange - One will need to be specified for each section of chart
+    chosenColors = ["#F47920", "#333333"];
+  }else{
     route = '/test-route';
   }
 

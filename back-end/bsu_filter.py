@@ -47,6 +47,18 @@ def bsu_parse_weekly_campus_cases():
     }
     return json.dumps(campus_cases)
 
+def bsu_parse_get_total_vaccines_per_type():
+    bsuvaccinations = dfDictbsu['bsu_2125453347']
+    moderna =int(bsuvaccinations['Moderna Vaccine (Total)'].iloc[1])
+    pfizer = int(bsuvaccinations['Pfizer Vaccine (Total)'].iloc[1])
+    jj =int(bsuvaccinations['Johnson & Johnson Vaccine (Total)'].iloc[1])
+
+    total_vaccinations = {
+        'vaccinations': [moderna, pfizer, jj]
+    }
+
+    return json.dumps(total_vaccinations)
+
 def bsu_parse_total_campus_cases():
     #total cases since 8/15/2021
     bsumain = dfDictbsu['bsu_0']
@@ -92,3 +104,28 @@ def bsu_parse_weekly_total_tests():
         'Description': "Total campus tests this week (CLIA)"
     }
     return json.dumps(tests)
+
+def bsu_parse_week_by_week():
+    #fetches the main sheet out of the bsu google sheet
+    bsumain = dfDictbsu['bsu_0']
+    #gets the data coulmums for Date and weekly cases
+    bsudate = bsumain['Date']
+    bsuweeklycases = bsumain['Weekly_Cases']
+
+    rstring = "["
+    i = 0
+    length = len(bsudate)
+    while i < length:
+        if pd.isna(bsudate[i]):
+            i+=1
+            continue
+
+        rstring+='{"date": "'+bsudate[i]+'",'
+        rstring+='"cases": '+str(bsuweeklycases[i])
+        if i+1 == length:
+            rstring += '}'
+        else:
+            rstring += '},'
+        i+=1
+    rstring += "]"
+    return rstring
