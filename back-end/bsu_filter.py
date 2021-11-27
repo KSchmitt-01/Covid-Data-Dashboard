@@ -25,7 +25,7 @@ def bsu_parse_isolation_capacity():
     isolationBedOccupants = int(bsumain['Occ_Isolation_Beds'].iloc[0])
 
     occupants = {
-    "Occupants": [isolationBedOccupants, (100-isolationBedOccupants)]
+        "Occupants": [isolationBedOccupants, (90-isolationBedOccupants)] #90 total isolation beds
     }
     return json.dumps(occupants)
 
@@ -35,9 +35,10 @@ def bsu_parse_weekly_campus_cases():
 
     campus_cases = {
         'Weekly': weekly_cases,
-        'OnCampus': int(bsumain['On-Campus_In_Person'].iloc[1]),
-        'OffCampus': int(bsumain['Off_Campus_In_Person'].iloc[1]),
-        'Faculty': int(bsumain['Faculty/Staff'].iloc[1])
+        'OnCampus': int(bsumain['On-Campus_In_Person'].iloc[0]),
+        'OffCampus': int(bsumain['Off_Campus_In_Person'].iloc[0]),
+        'Faculty': int(bsumain['Faculty/Staff'].iloc[0]),
+        'Description': "New cases this week"
     }
     return json.dumps(campus_cases)
 
@@ -60,9 +61,16 @@ def bsu_parse_total_campus_cases():
     print(total_cases)
     campus_cases = {
         'Total': total_cases,
+<<<<<<< HEAD
         'OnCampus': int(bsumain['Total_On-Campus_In_Person'].iloc[1]),
         'OffCampus': int(bsumain['Total_Off_Campus_In_Person'].iloc[1]),
         'Faculty': int(bsumain['Total Faculty/Staff'].iloc[1])
+=======
+        'OnCampus': int(bsumain['Total_On-Campus_In_Person'].iloc[0]),
+        'OffCampus': int(bsumain['Total_Off_Campus_In_Person'].iloc[0]),
+        'Faculty': int(bsumain['Total Faculty/Staff'].iloc[0]),
+        'Description': "Total campus cases"
+>>>>>>> 437a4d93bd84b444904a449a4cad419e9c1f3320
     }
     return json.dumps(campus_cases)
 
@@ -74,6 +82,25 @@ def bsu_parse_cases_since_school_start():
     total_cases = int(bsumain['Total_Cases'].iloc[1])
     cases = total_cases - start_cases
     cases = {
-        'Total': cases
+        'Total': cases,
+        'Description': "Total campus cases since 8/13/21"
     }
     return json.dumps(cases)
+
+def bsu_parse_weekly_positive_tests():
+    bsumain = dfDictbsu['bsu_2125453347']
+    total_positives = int(bsumain['Campus Positive Tests (CLIA)'].iloc[0])
+    positives = {
+        'Total': total_positives,
+        'Description': "Positive campus tests this week (CLIA)"
+    }
+    return json.dumps(positives)
+
+def bsu_parse_weekly_total_tests():
+    bsumain = dfDictbsu['bsu_2125453347']
+    total_tests = int(bsumain['Campus Total Tests (CLIA)'].iloc[0])
+    tests = {
+        'Total': total_tests,
+        'Description': "Total campus tests this week (CLIA)"
+    }
+    return json.dumps(tests)

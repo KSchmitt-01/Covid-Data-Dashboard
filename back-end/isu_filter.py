@@ -32,3 +32,11 @@ def isu_parse_total_cases_by_location():
     }
 
     return json.dumps(cases)
+    
+def test_def():
+    j = {
+        'Total': 690,
+        'Description': 'ISU test route description'
+    }
+    return json.dumps(j)
+

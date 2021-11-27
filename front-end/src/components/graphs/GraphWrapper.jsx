@@ -7,12 +7,7 @@ import BSUWeektoWeek from './BSUWeektoWeek'
 
 
 const useStyles = makeStyles({
-  root: { paddingTop: '200px' },
-  buttonGrid: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'space-around',
-  },
+  root: { paddingTop: '200px' }
 });
 
 //BSU data
@@ -66,7 +61,7 @@ var TotalByLocationPieChartOptions = {
 };
 
 function GraphWrapper({selection}) {
-    const classes = useStyles();
+  const classes = useStyles();
 
   var pieChartOptions;
 
