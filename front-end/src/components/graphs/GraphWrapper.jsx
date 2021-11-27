@@ -2,8 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import PageContainer from '../PageContainer';
 import SemiDoughnut from './SemiDoughnut'
+import LineChart from './LineChart'
 import PieChart from './PieChart'
-import BSUWeektoWeek from './BSUWeektoWeek'
 
 
 const useStyles = makeStyles({
@@ -76,7 +76,7 @@ function GraphWrapper({selection}) {
   
   return (
     <PageContainer className={`${classes.root}`}>
-        <BSUWeektoWeek/>
+        <LineChart selection={selection}/>
         <SemiDoughnut selection={selection}/>
         <PieChart selection={selection} options={pieChartOptions}/>
     </PageContainer>

@@ -21,29 +21,3 @@ def pull_isu_data():
             df = pd.read_csv(google_sheet_url)
         dfDictisu['isu_'+sheet] = df
     return dfDictisu
-
-def parse_week_by_week_bsu():
-    pull_bsu_data()
-    #fetches the main sheet out of the bsu google sheet
-    bsumain = dfDictbsu['bsu_0']
-    #gets the data coulmums for Date and weekly cases
-    bsudate = bsumain['Date']
-    bsuweeklycases = bsumain['Weekly_Cases']
-
-    rstring = "["
-    i = 0
-    length = len(bsudate)
-    while  i < length:
-        rstring+='{"date": "'+bsudate[i]+'",'
-        rstring+='"cases": '+str(bsuweeklycases[i])
-        if i+1 == length:
-            rstring += '}'
-        else:
-            rstring += '},'
-        i+=1
-    rstring += "]"
-    return rstring
-
-def filter_by_classes(school):
-    if school == "BSU":
-        dfDict = pull_bsu_data()
