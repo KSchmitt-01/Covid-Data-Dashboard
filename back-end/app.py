@@ -26,6 +26,14 @@ def get_total_campus_cases():
 def get_total_school_year_cases():
     return bsu_parse_cases_since_school_start()
 
+@app.route('/total-vaccinations-per-type')
+def get_total_vaccines_per_type():
+    return bsu_parse_get_total_vaccines_per_type()
+
+@app.route('/total_cases_by_location')
+def get_total_cases_by_location():
+    return isu_parse_total_cases_by_location()
+    
 @app.route('/weekly-positive-tests')
 def get_weekly_positive_tests():
     return bsu_parse_weekly_positive_tests()
