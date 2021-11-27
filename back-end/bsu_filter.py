@@ -61,16 +61,10 @@ def bsu_parse_total_campus_cases():
     print(total_cases)
     campus_cases = {
         'Total': total_cases,
-<<<<<<< HEAD
-        'OnCampus': int(bsumain['Total_On-Campus_In_Person'].iloc[1]),
-        'OffCampus': int(bsumain['Total_Off_Campus_In_Person'].iloc[1]),
-        'Faculty': int(bsumain['Total Faculty/Staff'].iloc[1])
-=======
         'OnCampus': int(bsumain['Total_On-Campus_In_Person'].iloc[0]),
         'OffCampus': int(bsumain['Total_Off_Campus_In_Person'].iloc[0]),
         'Faculty': int(bsumain['Total Faculty/Staff'].iloc[0]),
         'Description': "Total campus cases"
->>>>>>> 437a4d93bd84b444904a449a4cad419e9c1f3320
     }
     return json.dumps(campus_cases)
 
