@@ -10,7 +10,7 @@ const useStyles = makeStyles({
   root: { paddingTop: '200px' }
 });
 
-//BSU data
+//BSU 
 var vaccinePieChartOptions = {
   title:{
     text: "Total Vaccine Count Based on Type",
@@ -45,7 +45,7 @@ var TotalByLocationPieChartOptions = {
       color: '#000000'
     }
   },
-  colors: ["#F47920", "#333333","#828282", "#f69240", "#EEEEFF", "#A7A7A7", "#E6E7E8"],
+  colors: ["#F47920", "#333333","#828282", "#f69240", "#B8B8B9", "#A7A7A7", "#CFCFD0"],
   labels: ["Pocatello", "Meridian", "Idaho Falls", "Twin Falls", "Off Campus", "Experiential", "Satellite"],
   responsive: [{
     breakpoint: 480,
