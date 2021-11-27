@@ -2,19 +2,22 @@ import React, {useEffect, useState} from "react";
 import Chart from "react-apexcharts";
 
 
-function BSUWeektoWeek({selection}) {
+function LineChart({selection}) {
   const [dates, setDates] = useState([]);
   const [cases, setCases] = useState([]);
 
   let coulor = ['#0033A0']
   let route = '/bsuweekdata';
+  let chartTitle = "Bsu Cases Per Week"
 
   if (selection === "Boise State University") {
     route = '/bsuweekdata';
-    coulor = ['#0033A0']
+    coulor = ['#0033A0'];
+    chartTitle = "BSU Cases Per Week"
   } else {
     route = '/isuweekdata';
-    coulor = ['#F47920']
+    coulor = ['#F47920'];
+    chartTitle = "ISU Cases Per Week";
   }
 
   useEffect(() =>
@@ -50,22 +53,25 @@ function BSUWeektoWeek({selection}) {
                     },
                     xaxis: {
                       categories: dates,
-                      labels: {
-                                show: true,
-                                title: {
-                                    text: "Weeks",
-                                    maxWidth: 200,
-                                    style: {
-                                        fontSize: '80px'
-                                    }
-                                }
-                      }
+                                            title: {
+                      text: chartTitle,
+                      align: 'Center',
+                      margin: 10,
+                      offsetX: 0,
+                      offsetY: 0,
+                      floating: false,
+                      style: {
+                        fontSize:  '24px',
+                        fontWeight:  'bold',
+                        color:  '#263238'
+                      },
+                    },
                     },
                     yaxis: {
                       title: {
                           text: 'Cases',
                             style: {
-                              fontSize: '24px'
+                              fontSize: '16px'
                             }
                       }
                     },
@@ -89,4 +95,4 @@ function BSUWeektoWeek({selection}) {
 }
 
 
-export default BSUWeektoWeek;
+export default LineChart;
