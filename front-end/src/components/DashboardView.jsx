@@ -6,7 +6,6 @@ import GraphWrapper from './graphs/GraphWrapper'
 function DashboardView() {
  const [schoolSelection, setSchoolSelection] = useState('Boise State University');
 
-
  return (
     <PageContainer className="flex-wrap space-around">
         <DashboardHeader updateSchool={setSchoolSelection}/>

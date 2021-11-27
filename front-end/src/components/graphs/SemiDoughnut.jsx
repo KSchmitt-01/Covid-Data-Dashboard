@@ -11,11 +11,11 @@ function SemiDoughnut({selection}) {
   if(selection === "Boise State University"){
     route = '/isolation-bed-occupants';
     //Sets colors to blue and orange - One will need to be specified for each section of chart
-    chosenColors = ["#0000FF", "#FFA500"];
+    chosenColors = ["#0033A0", "#D64309"];
   } else if(selection === "Idaho State University"){
     route = '/test-route';
     //Sets colors to black and orange - One will need to be specified for each section of chart
-    chosenColors = ["#FFA500", "#000000"];
+    chosenColors = ["#F47920", "#333333"];
   }else{
     route = '/test-route';
   }
