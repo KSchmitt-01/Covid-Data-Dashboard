@@ -1,6 +1,7 @@
 import json
 from pullCovidData import *
 from utilityFunctions import *
+from constants import *
 
 dfDictbsu = pull_bsu_data()
 
@@ -26,10 +27,10 @@ def bsu_parse_isolation_capacity():
     isolationBedOccupants = int(get_first_value(bsumain, 'Occ_Isolation_Beds'))
 
     occupants = {
-        "Total": [isolationBedOccupants, (90-isolationBedOccupants)], #90 total isolation beds
+        "Total": [isolationBedOccupants, (BSU_ISOLATION_BEDS-isolationBedOccupants)], #90 total isolation beds
         "Title": "Isolation Capacity",
         "Labels": ["Occupied Beds (%)", "Avaliable Beds (%)"],
-        "Colors": ["#0033A0", "#D64309"]
+        "Colors": [BSU_BLUE, BSU_ORANGE]
     }
     return json.dumps(occupants)
 

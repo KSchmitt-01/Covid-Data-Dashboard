@@ -1,5 +1,6 @@
 import json
 from pullCovidData import *
+from constants import *
 
 isumain = pull_isu_data()
 
@@ -12,7 +13,7 @@ def isu_parse_cases_by_category():
         'Total': [student_cases, faculty_cases],
         'Title': 'Total Cases by Category',
         "Labels": ["Students", "Faculty/Staff"],
-        "Colors": ["#828282", "#f69240"]
+        "Colors": [ISU_GREY, ISU_LIGHT_ORANGE]
 
     }
     return json.dumps(cases)
