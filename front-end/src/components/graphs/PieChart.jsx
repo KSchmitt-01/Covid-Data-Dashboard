@@ -16,7 +16,6 @@ function PieChart({selection, options}) {
   useEffect(() =>
     {fetch(route).then(res => res.json()).then(data =>
         {setOccupants(data.vaccinations);
-          console.log(data.vaccinations)
         });
     }, [route, selection]);
 
