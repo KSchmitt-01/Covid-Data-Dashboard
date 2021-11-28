@@ -129,3 +129,37 @@ def bsu_parse_week_by_week():
         i+=1
     rstring += "]"
     return rstring
+
+def bsu_parse_Vacination_Table():
+    #fetches the main sheet out of the bsu google sheet
+    bsumain = dfDictbsu['bsu_2125453347']
+    table = bsumain.values
+
+    length = len(table)
+    z= 0
+
+    rstring = "["
+
+    for i in table:
+        if pd.isna(i[0]) or pd.isna(i[1]) or pd.isna(i[2]) or pd.isna(i[3]) or pd.isna(i[4]) or pd.isna(i[5]) or pd.isna(i[6]) or pd.isna(i[7]) or pd.isna(i[8]):
+            z += 1
+            continue
+        rstring += '{"date": "' + i[0] + '",'
+        rstring += '"CLIA": ' + str(i[1]) + ','
+        rstring += '"CLIAT": ' + str(i[2]) + ','
+        rstring += '"ModVacWeek": ' + str(i[3]) + ','
+        rstring += '"ModT": ' + str(i[4]) + ','
+        rstring += '"PfizVacWeek": ' + str(i[5]) + ','
+        rstring += '"PfiT": ' + str(i[6]) + ','
+        rstring += '"JJVacWeek": ' + str(i[7]) + ','
+        rstring += '"JJT": ' + str(i[8])
+
+        if z + 1 == length:
+            rstring += '}'
+        else:
+            rstring += '},'
+        z += 1
+
+    rstring += "]"
+    return rstring
+

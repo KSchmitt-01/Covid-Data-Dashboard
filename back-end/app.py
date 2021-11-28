@@ -52,3 +52,7 @@ def test():
 @app.route('/another-test-route')
 def test2():
     return test_def()
+
+@app.route('/bsu_parse_Vacination_Table')
+def gettabledata():
+    return bsu_parse_Vacination_Table()
