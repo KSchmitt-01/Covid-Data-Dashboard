@@ -27,7 +27,7 @@ export default function VacinationTable() {
 
             setTests(rows)
         });
-    }, );
+    }, []);
 
   console.log(test[0])
   rows = test
