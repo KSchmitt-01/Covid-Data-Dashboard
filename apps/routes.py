@@ -1,6 +1,6 @@
 from flask import Blueprint
-from app.bsu_filter import *
-from app.isu_filter import *
+from apps.bsu_filter import *
+from apps.isu_filter import *
 
 routes = Blueprint('routes', __name__)
 
