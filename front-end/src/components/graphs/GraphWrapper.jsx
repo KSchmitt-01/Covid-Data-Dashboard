@@ -13,11 +13,12 @@ const useStyles = makeStyles({
 //BSU 
 var vaccinePieChartOptions = {
   title:{
-    text: "Total Vaccine Count Based on Type",
-    align: 'center',
-    floating: false,
-    style:{
-      color: '#000000'
+    text: "Total Vaccines By Type",
+    align: 'Center',
+    style: {
+      fontSize:  '24px',
+      fontWeight:  'bold',
+      color:  '#263238'
     }
   },
   colors: ["#0033A0", "#D64309", "#d3d3d3"],
@@ -38,11 +39,12 @@ var vaccinePieChartOptions = {
 //ISU
 var TotalByLocationPieChartOptions = {
   title:{
-    text: "Total Cases by Campus Location From July 8th to Present",
-    align: 'center',
-    floating: false,
-    style:{
-      color: '#000000'
+    text: "Total Cases - July 8th to Present",
+    align: 'Center',
+    style: {
+      fontSize:  '24px',
+      fontWeight:  'bold',
+      color:  '#263238'
     }
   },
   colors: ["#F47920", "#333333","#828282", "#f69240", "#B8B8B9", "#A7A7A7", "#CFCFD0"],
