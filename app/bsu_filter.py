@@ -1,7 +1,7 @@
 import json
-from pullCovidData import *
-from utilityFunctions import *
-from constants import *
+from app.pullCovidData import *
+from app.utilityFunctions import *
+from app.constants import *
 
 dfDictbsu = pull_bsu_data()
 

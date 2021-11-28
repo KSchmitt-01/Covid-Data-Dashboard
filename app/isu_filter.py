@@ -1,6 +1,6 @@
 import json
-from pullCovidData import *
-from constants import *
+from app.pullCovidData import *
+from app.constants import *
 
 isumain = pull_isu_data()
 
