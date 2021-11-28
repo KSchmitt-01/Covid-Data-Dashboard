@@ -49,9 +49,9 @@ def bsu_parse_weekly_campus_cases():
 
 def bsu_parse_get_total_vaccines_per_type():
     bsuvaccinations = dfDictbsu['bsu_2125453347']
-    moderna =int(bsuvaccinations['Moderna Vaccine (Total)'].iloc[1])
-    pfizer = int(bsuvaccinations['Pfizer Vaccine (Total)'].iloc[1])
-    jj =int(bsuvaccinations['Johnson & Johnson Vaccine (Total)'].iloc[1])
+    moderna =int(get_first_value(bsuvaccinations,'Moderna Vaccine (Total)'))
+    pfizer = int(get_first_value(bsuvaccinations,'Pfizer Vaccine (Total)'))
+    jj =int(get_first_value(bsuvaccinations,'Johnson & Johnson Vaccine (Total)'))
 
     total_vaccinations = {
         'vaccinations': [moderna, pfizer, jj]
