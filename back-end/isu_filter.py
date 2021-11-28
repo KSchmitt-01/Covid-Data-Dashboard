@@ -47,7 +47,7 @@ def test_def():
 def isu_parse_week_by_week():
     #fetches the main sheet out of the bsu google sheet
     isu = dfDictisu['isu_0']
-    #gets the data coulmums for Date and weekly cases
+    #gets the data columns for Date and weekly cases
     isuDateCase = isu.values
 
     z = 0

@@ -7,7 +7,7 @@ var chosenColors = ["#000000", "#FFFFFF"];
 function SemiDoughnut({selection}) {
   const[occupants, setOccupants] = useState([50,50]);
   const[title, setTitle] = useState('Isolation Capacity');
-  const[labels, setLabels] = useState(["Occupied Beds (%)", "Avaliable Beds (%)"]);
+  const[labels, setLabels] = useState(["Occupied Beds (%)", "Available Beds (%)"]);
   const[colors, setColors] = useState(["#0033A0", "#D64309"]);
 
   let route = '/isolation-bed-occupants';

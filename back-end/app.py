@@ -52,3 +52,7 @@ def test():
 @app.route('/another-test-route')
 def test2():
     return test_def()
+
+@app.route('/weekly-on-campus')
+def get_weekly_on_campus():
+    return bsu_parse_on_campus_by_week()
