@@ -79,10 +79,12 @@ function GraphWrapper({selection}) {
   
   return (
     <PageContainer className={`${classes.root}`}>
-        <LineChart selection={selection}/>
-        <SemiDoughnut selection={selection}/>
-        <PieChart selection={selection} options={pieChartOptions}/>
-        <BarChart selection={selection}/>
+        <div class = "container">
+          <LineChart selection={selection}/>
+          <SemiDoughnut selection={selection}/>
+          <PieChart selection={selection} options={pieChartOptions}/>
+          <BarChart selection={selection}/>
+        </div>
     </PageContainer>
   );
 }

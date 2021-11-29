@@ -5,13 +5,13 @@ function BarChart({selection, options}) {
     const [dates, setDates] = useState([]);
     const [cases, setCases] = useState([]);
 
-  let coulor = ['#0033A0']
+  let coulor = ["#D64309"]
   let route = '/weekly-on-campus';
   let chartTitle = "Bsu On-Campus Cases Per Week"
 
   if (selection === "Boise State University") {
     route = '/weekly-on-campus';
-    coulor = ['#0033A0'];
+    coulor = ["#D64309"];
     chartTitle = "BSU On-Campus Cases Per Week"
   } else {
     route = '/isuweekdata';
@@ -82,7 +82,7 @@ function BarChart({selection, options}) {
                               }]}
               
                               type="bar"
-                              width="850"
+                              width="800"
                         />
                     </div>
                 </div>
