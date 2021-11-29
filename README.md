@@ -20,7 +20,7 @@ pip install flask
 
 ## Setup Python Flask Backend
 
-To run the backend, go into the Covid-Data-Dashboard\front-end directory and run the following command in a new terminal:
+To run the back-end, go into the Covid-Data-Dashboard\front-end directory and run the following command in a new terminal:
 
 ```
 yarn start-backend
@@ -28,7 +28,7 @@ yarn start-backend
 
 ## Run React.js Frontend
 
-To run the frontend, go into the Covid-Data-Dashboard\front-end directory and run the following command in a new terminal:
+To run the front-end, go into the Covid-Data-Dashboard\front-end directory and run the following command in a new terminal:
 
 ```
 yarn start
@@ -36,7 +36,7 @@ yarn start
 
 This should open a new browser with the application
 
-> Note: you will get errors if the backend is not started before the frontend and the default data will be used 
+> Note: you will get connection errors if the back-end is not started before the front-end and the default data will be used 
 
 ## Resources used to create setup
 
