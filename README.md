@@ -26,6 +26,8 @@ To run the back-end, go into the Covid-Data-Dashboard\front-end directory and ru
 yarn start-backend
 ```
 
+> Note: This server will only run in the terminal on port 5000 (http://127.0.0.1:5000/). It will not pop up a window like the front-end does.
+
 ## Run React.js Frontend
 
 To run the front-end, go into the Covid-Data-Dashboard\front-end directory and run the following command in a new terminal:
@@ -34,7 +36,7 @@ To run the front-end, go into the Covid-Data-Dashboard\front-end directory and r
 yarn start
 ```
 
-This should open a new browser with the application
+This should open a new browser with the application on localhost:3000
 
 > Note: you will get connection errors if the back-end is not started before the front-end and the default data will be used 
 
