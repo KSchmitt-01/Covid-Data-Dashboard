@@ -4,10 +4,6 @@ import Chart from "react-apexcharts";
 function BarChart({selection, options}) {
     const [dates, setDates] = useState([]);
     const [cases, setCases] = useState([]);
-    // const[title, setTitle] = useState('On Campus Cases');
-    // const[labels, setLabels] = useState(["Total Cases on Campus", "Total Cases by Week"]);
-    // const[colors, setColors] = useState(["#0033A0", "#D64309"]);
-
 
   let coulor = ['#0033A0']
   let route = '/weekly-on-campus';
@@ -26,7 +22,9 @@ function BarChart({selection, options}) {
     useEffect(() => 
         {fetch(route).then(res => res.json()).then(data =>
             {
-              const d = []
+              // Dates
+              const d= []
+              // Cases
               const c = []
 
             for (let i = 0; i < data.length; i++) {
@@ -34,8 +32,8 @@ function BarChart({selection, options}) {
                 c.push(data[i].cases);
             }
 
-        d.reverse()
-        c.reverse()
+            d.reverse()
+            c.reverse()
             setDates(d)
             setCases(c)
     
@@ -49,7 +47,7 @@ function BarChart({selection, options}) {
                         <Chart
                             options={{
                                 chart: {
-                                    id: "basic-bar"
+                                    id: "simple-bar"
                                   },
                                   xaxis: {
                                     categories: dates,
