@@ -8,15 +8,9 @@ def get_first_value(dataFrame, columnName):
             return value
 
 def get_last_value(dataFrame, columnName):
+    value = int(dataFrame[columnName].tail(1))
 
-    i = 0
-    value = dataFrame[columnName].iloc[0]
-    while value is not isNaN(i+1):
-        value = dataFrame[columnName].iloc[i+1]
-        i = i+1
-    
-    if isNaN(value):
-        #Return value
-        return 0
-    else:
+    if not isNaN(value):
         return value
+    else:
+        return 0
