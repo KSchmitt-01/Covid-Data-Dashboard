@@ -56,3 +56,7 @@ def test2():
 @app.route('/weekly-on-campus')
 def get_weekly_on_campus():
     return bsu_parse_on_campus_by_week()
+
+@app.route('/isu-pocatello-cases')
+def get_isu_pocatello_cases():
+    return isu_parse_pocatello_week_by_week();

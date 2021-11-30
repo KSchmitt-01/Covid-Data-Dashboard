@@ -14,9 +14,9 @@ function BarChart({selection, options}) {
     coulor = ["#D64309"];
     chartTitle = "BSU On-Campus Cases Per Week"
   } else {
-    route = '/isuweekdata';
+    route = '/isu-pocatello-cases';
     coulor = ['#F47920'];
-    chartTitle = "ISU On-Campus Cases Per Week";
+    chartTitle = "Pocatello Cases";
   }
 
     useEffect(() => 

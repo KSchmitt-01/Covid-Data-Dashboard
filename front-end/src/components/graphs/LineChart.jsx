@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import Chart from "react-apexcharts";
 
 
-function LineChart({selection}) {
+function LineChart({selection, options}) {
   const [dates, setDates] = useState([]);
   const [cases, setCases] = useState([]);
 
