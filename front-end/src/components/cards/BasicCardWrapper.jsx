@@ -27,27 +27,55 @@ function BasicCardWrapper({selection}) {
     const[route4Description, setRoute4Description] = useState('');
 
     let route1 = '/school-year-cases';
-    if(selection === "Boise State University"){
+    if(selection === "Boise State University")
+    {
       route1 = '/school-year-cases';
-    } else{
+    } 
+    else if ('Idaho State University')
+    {
+      route1 = '/isu-total-pocatello-campus-cases'
+    }
+    else
+    {
       route1 = '/another-test-route';
     }
+
     let route2 = '/weekly-campus-cases';
     if(selection === "Boise State University"){
       route2 = '/weekly-campus-cases';
-    } else{
+    }
+    else if(selection === "Idaho State University")
+    {
+      route2 = '/isu-weekly-campus-cases';
+    } 
+    else{
       route2 = '/weekly-campus-cases';
     }
+
     let route3 = '/weekly-positive-tests';
-    if(selection === "Boise State University"){
+    if(selection === "Boise State University")
+    {
       route3 = '/weekly-positive-tests';
-    } else{
+    } 
+    else if (selection === "Idaho State University")
+    {
+      route3 = '/isu-weekly-student-positive-tests'
+    }
+    else
+    {
       route3 = '/weekly-positive-tests';
     }
+
     let route4 = '/weekly-total-tests';
-    if(selection === "Boise State University"){
+    if(selection === "Boise State University")
+    {
       route4 = '/weekly-total-tests';
-    } else{
+    } 
+    else if (selection ===  "Idaho State University")
+    {
+      route4 = '/isu-weekly-faculty-positive-tests'
+    }
+    else{
       route4 = '/weekly-total-tests';
     }
 

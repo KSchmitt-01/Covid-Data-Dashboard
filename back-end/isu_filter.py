@@ -1,6 +1,7 @@
 import json
 from pullCovidData import *
 from constants import *
+from utilityFunctions import *
 
 isumain = pull_isu_data()
 
@@ -17,6 +18,48 @@ def isu_parse_cases_by_category():
 
     }
     return json.dumps(cases)
+
+def isu_parse_cases_since_july():
+    isumain = dfDictisu['isu_945251250']
+    cases = int (isumain['Total'].iloc[2])
+    cases = {
+        'Total': cases,
+        'Description': "Total Pocatello campus cases since 7/8/21"
+    }
+    return json.dumps(cases)
+
+def isu_parse_student_positives():
+    isumain = dfDictisu['isu_1770627829']
+    total_positives = int(isumain['Student'].tail(1))
+    print(total_positives)
+    positives = {
+        'Total': total_positives,
+        'Description': "Confirmed Positive Student Cases"
+    }
+    return json.dumps(positives)
+
+def isu_parse_faculty_positives():
+    isumain = dfDictisu['isu_1770627829']
+    total_positives = int(isumain['Faculty/Staff'].tail(1))
+    print(total_positives)
+    positives = {
+        'Total': total_positives,
+        'Description': "Confirmed Positive Faculty or Staff Cases"
+    }
+    return json.dumps(positives)
+
+def isu_parse_new_cases():
+    isumain= dfDictisu['isu_0']
+    most_recent = int(isumain['New Cases on Campus'].tail(1))
+    print("length")
+    print(len(isumain))
+    positives = {
+        "Weekly": most_recent,
+        'Description': "Positive campus tests this week (CLIA)"
+    }
+
+    print(positives)
+    return json.dumps(positives)
 
 def isu_parse_total_cases_by_location():
     isumain = dfDictisu['isu_945251250']
