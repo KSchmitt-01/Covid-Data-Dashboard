@@ -5,7 +5,12 @@ This project is a React.js application with a Python Flask backend. It pulls dow
 
 ## Install Dependencies
 
-First start off by installing `Node.js`, `yarn`, and `python`.
+First start off by installing `Node.js` and `python`.
+
+Once installed, run the following command to install yarn:
+```
+npm install yarn
+```
 
 In the Covid-Data-Dashboard\front-end directory, run the following command to download dependencies:
 
@@ -13,10 +18,11 @@ In the Covid-Data-Dashboard\front-end directory, run the following command to do
 yarn build
 ```
 
-To Install the Python Flask dependency, use the following command:
+To Install the Python dependencies run the command in the root:
 ```
-pip install flask
+pip install -r requirements.txt
 ```
+> Note: Two terminals will be needed to run the project.
 
 ## Setup Python Flask Backend
 
@@ -26,7 +32,7 @@ To run the back-end, go into the Covid-Data-Dashboard\front-end directory and ru
 yarn start-backend
 ```
 
-> Note: This server will only run in the terminal on port 5000 (http://127.0.0.1:5000/). It will not pop up a window like the front-end does.
+> Note: This is a development server only and not a production server. It will only run in the terminal on port 5000 (http://127.0.0.1:5000/). It will not pop up a window like the front-end does.
 
 ## Run React.js Frontend
 
