@@ -2,6 +2,7 @@ import React, { useState }  from 'react';
 import DashboardHeader from './header/DashboardHeader'
 import PageContainer from './PageContainer';
 import ContentWrapper from './ContentWrapper'
+import VacinationTable from "./graphs/VacinationTable";
 
 function DashboardView() {
  const [schoolSelection, setSchoolSelection] = useState('Boise State University');
