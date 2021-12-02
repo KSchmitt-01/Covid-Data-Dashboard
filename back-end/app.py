@@ -68,3 +68,19 @@ def test():
 @app.route('/another-test-route')
 def test2():
     return test_def()
+
+@app.route('/bsu_isolation_bed_count')
+def get_isolation_bed_count():
+    return bsu_parse_isolation_bed_count()
+
+@app.route('/bsu_parse_weekly_oncampus_cases')
+def get_weekly_oncampus_cases_count():
+    return bsu_parse_weekly_oncampus_cases()
+
+@app.route('/bsu_parse_weekly_offcampus_cases')
+def get_weekly_offcampus_cases_count():
+    return bsu_parse_weekly_offcampus_cases()
+
+@app.route('/bsu_parse_weekly_faculty_cases')
+def get_weekly_faculty_cases_count():
+    return bsu_parse_weekly_faculty_cases()

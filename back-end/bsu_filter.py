@@ -34,6 +34,43 @@ def bsu_parse_isolation_capacity():
     }
     return json.dumps(occupants)
 
+def bsu_parse_isolation_bed_count():
+    bsumain = dfDictbsu['bsu_0']
+    isolationBedOccupants = int(get_first_value(bsumain, 'Occ_Isolation_Beds'))
+    date = get_first_value(bsumain, 'Date')
+    occupants = {
+        "Total": isolationBedOccupants,
+        "Description": "Total occupied isolation beds for the week of " + str(date)
+    }
+    return json.dumps(occupants)
+
+def bsu_parse_weekly_oncampus_cases():
+    bsumain = dfDictbsu['bsu_0']
+    date = get_first_value(bsumain, 'Date')
+    campus_cases = {
+        'Total': int(get_first_value(bsumain, 'On-Campus_In_Person')),
+        'Description': "On Campus Cases for the Week of " + str(date)
+    }
+    return json.dumps(campus_cases)
+
+def bsu_parse_weekly_offcampus_cases():
+    bsumain = dfDictbsu['bsu_0']
+    date = get_first_value(bsumain, 'Date')
+    campus_cases = {
+        'Total': int(get_first_value(bsumain, 'Off_Campus_In_Person')),
+        'Description': "Off Campus Cases for the Week of " + str(date)
+    }
+    return json.dumps(campus_cases)
+
+def bsu_parse_weekly_faculty_cases():
+    bsumain = dfDictbsu['bsu_0']
+    date = get_first_value(bsumain, 'Date')
+    campus_cases = {
+        'Total': int(get_first_value(bsumain, 'Faculty/Staff')),
+        'Description': "Faculty and Staff Cases for the Week of " + str(date)
+    }
+    return json.dumps(campus_cases)
+
 def bsu_parse_weekly_campus_cases():
     bsumain = dfDictbsu['bsu_0']
     weekly_cases = int(get_first_value(bsumain, 'Weekly_Cases'))

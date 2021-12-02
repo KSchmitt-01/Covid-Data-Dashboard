@@ -25,6 +25,14 @@ function BasicCardWrapper({selection}) {
     const[route3Description, setRoute3Description] = useState('');
     const[route4Value, setRoute4Value] = useState(0);
     const[route4Description, setRoute4Description] = useState('');
+    const[route5Value, setRoute5Value] = useState(0);
+    const[route5Description, setRoute5Description] = useState('');
+    const[route6Value, setRoute6Value] = useState(0);
+    const[route6Description, setRoute6Description] = useState('');
+    const[route7Value, setRoute7Value] = useState(0);
+    const[route7Description, setRoute7Description] = useState('');
+    const[route8Value, setRoute8Value] = useState(0);
+    const[route8Description, setRoute8Description] = useState('');
 
     let route1 = '/school-year-cases';
     if(selection === "Boise State University")
@@ -79,6 +87,11 @@ function BasicCardWrapper({selection}) {
       route4 = '/weekly-total-tests';
     }
 
+    let route5 = '/bsu_isolation_bed_count'
+    let route6 = '/bsu_parse_weekly_oncampus_cases'
+    let route7 = '/bsu_parse_weekly_offcampus_cases'
+    let route8 = 'bsu_parse_weekly_faculty_cases'
+
   useEffect(() =>{
     fetch(route1).then(res => res.json()).then(data =>
         {
@@ -111,14 +124,64 @@ function BasicCardWrapper({selection}) {
         });
   }, [route4, selection]);
 
-  return (
-    <PageContainer className={`${classes.root}`}>
-        <BasicCard value={route1Value} description={route1Description}/>
-        <BasicCard value={route2Value} description={route2Description}/>
-        <BasicCard value={route3Value} description={route3Description}/>
-        <BasicCard value={route4Value} description={route4Description}/>
-    </PageContainer>
-  );
+  useEffect(() =>{
+    fetch(route5).then(res => res.json()).then(data =>
+        {
+          setRoute5Value(data.Total);
+          setRoute5Description(data.Description);
+        });
+  }, [route5, selection]);
+
+  useEffect(() =>{
+    fetch(route6).then(res => res.json()).then(data =>
+        {
+          setRoute6Value(data.Total);
+          setRoute6Description(data.Description);
+        });
+  }, [route6, selection]);
+
+  useEffect(() =>{
+    fetch(route7).then(res => res.json()).then(data =>
+        {
+          setRoute7Value(data.Total);
+          setRoute7Description(data.Description);
+        });
+  }, [route7, selection]);
+
+  useEffect(() =>{
+    fetch(route8).then(res => res.json()).then(data =>
+        {
+          setRoute8Value(data.Total);
+          setRoute8Description(data.Description);
+        });
+  }, [route8, selection]);
+
+if(selection == "Boise State University")
+{
+    return (
+      <PageContainer className={`${classes.root}`}>
+          <BasicCard value={route1Value} description={route1Description}/>
+          <BasicCard value={route2Value} description={route2Description}/>
+          <BasicCard value={route3Value} description={route3Description}/>
+          <BasicCard value={route4Value} description={route4Description}/>
+          <BasicCard value={route5Value} description={route5Description}/>
+          <BasicCard value={route6Value} description={route6Description}/>
+          <BasicCard value={route7Value} description={route7Description}/>
+          <BasicCard value={route8Value} description={route8Description}/>
+      </PageContainer>
+    );
+  }
+  else
+  {
+    return (
+      <PageContainer className={`${classes.root}`}>
+          <BasicCard value={route1Value} description={route1Description}/>
+          <BasicCard value={route2Value} description={route2Description}/>
+          <BasicCard value={route3Value} description={route3Description}/>
+          <BasicCard value={route4Value} description={route4Description}/>
+      </PageContainer>
+    );
+  }
 }
 
 export default BasicCardWrapper;
