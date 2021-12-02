@@ -4,7 +4,7 @@ import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
 
 
-function LineChart({selection, options}) {
+function LineChart({selection, innerTheme}) {
   const [dates, setDates] = useState([]);
   const [cases, setCases] = useState([]);
 
@@ -56,27 +56,38 @@ function LineChart({selection, options}) {
               },
             xaxis: {
               categories: dates,
-                                    title: {
-              text: chartTitle,
-              align: 'Center',
-              margin: 10,
-              offsetX: 0,
-              offsetY: 0,
-              floating: false,
-              style: {
-                fontSize:  '24px',
-                fontWeight:  'bold',
-                color:  '#263238'
+              color: innerTheme.palette.text.primary,
+              labels:{
+                style:{
+                  colors: innerTheme.palette.text.primary
+                }
               },
-            },
+              title: {
+                text: chartTitle,
+                align: 'Center',
+                margin: 10,
+                offsetX: 0,
+                offsetY: 0,
+                floating: false,
+                style: {
+                  fontSize:  '20px',
+                  color:  innerTheme.palette.text.primary
+                },
+              },
             },
             yaxis: {
               title: {
                 text: 'Cases',
                 style: {
-                  fontSize: '16px'
+                  fontSize: '20px',
+                  color:  innerTheme.palette.text.primary
                 }
-              }
+              },
+              labels:{
+                style:{
+                  colors: innerTheme.palette.text.primary
+                }
+              },
             },
             colors:coulor
           }}

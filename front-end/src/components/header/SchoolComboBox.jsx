@@ -3,21 +3,19 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
+export default function SchoolComboBox({updateSelection, iTheme}) {
+  const styles = makeStyles({
     option: {
       "&:hover": {
-        backgroundColor: "#2196f3 !important"
+        backgroundColor: iTheme.palette.action.active
       }
-    }
+    },
   });
 
   const dataOptions = [
-    { label: 'Boise State University', color:"#ffffff" },
-    { label: 'Idaho State University', color:"#ffffff" },
+    { label: 'Boise State University' },
+    { label: 'Idaho State University'},
 ];
-
-export default function SchoolComboBox({updateSelection}) {
-  const styles = useStyles();
   return (
     <Autocomplete
         id="combo-box-demo"
@@ -36,9 +34,9 @@ export default function SchoolComboBox({updateSelection}) {
         }}
         style={{ width: 300 }}
         renderOption={(props, option) => {
-            const { label, color } = option;
+            const { label } = option;
             return (
-                <span {...props} style={{ backgroundColor: color }}>
+                <span {...props} >
                 {label}
                  </span>
             );

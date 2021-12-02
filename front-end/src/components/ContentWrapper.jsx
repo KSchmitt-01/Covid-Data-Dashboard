@@ -62,23 +62,23 @@ function getPieChartOptions(school){
   else return vaccinePieChartOptions;
 }
 
-function ContentWrapper({schoolSelection}) {
+function ContentWrapper({schoolSelection, theme}) {
   const options = getPieChartOptions(schoolSelection);
 
  return (
     <Grid container justifyContent="center" spacing={3}>
       <Grid item xs={12} md={12} lg={12}>
-        <BasicCardWrapper selection={schoolSelection}/>
+        <BasicCardWrapper selection={schoolSelection} />
       </Grid>
       <Grid item xs={12} md={6} lg={8}>
-        <LineChart selection={schoolSelection} options={options}/>
+        <LineChart selection={schoolSelection} innerTheme={theme}/>
       </Grid>
       <Grid item xs={12} md={6} lg={4}>
         <SemiDoughnut selection={schoolSelection}/>
         <PieChart selection={schoolSelection} options={options}/>
       </Grid>
       <Grid item xs={12} md={6} lg={8}>
-        <BarChart selection={schoolSelection} options={options}/>
+        <BarChart selection={schoolSelection} innerTheme={theme}/>
       </Grid>
     </Grid>
   );

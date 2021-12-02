@@ -43,7 +43,7 @@ function SemiDoughnut({selection}) {
                 style: {
                   fontSize:  '24px',
                   fontWeight:  'bold',
-                  color:  '#263238'
+                  color:  'primary'
                 },
               },
               labels: labels,

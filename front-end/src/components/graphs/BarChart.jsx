@@ -3,7 +3,7 @@ import Chart from "react-apexcharts";
 import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
 
-function BarChart({selection, options}) {
+function BarChart({selection, innerTheme}) {
     const [dates, setDates] = useState([]);
     const [cases, setCases] = useState([]);
 
@@ -61,19 +61,29 @@ function BarChart({selection, options}) {
                   offsetY: 0,
                   floating: false,
                   style: {
-                    fontSize:  '24px',
-                    fontWeight:  'bold',
-                    color:  '#263238'
+                    fontSize:  '20px',
+                    color:  innerTheme.palette.text.primary
                   },
+                },
+                labels:{
+                  style:{
+                    colors: innerTheme.palette.text.primary
+                  }
                 },
               },
               yaxis: {
                 title: {
                     text: 'On-Campus Cases',
                       style: {
-                        fontSize: '16px'
+                        fontSize: '20px',
+                        color:  innerTheme.palette.text.primary
                       }
-                }
+                },
+                labels:{
+                  style:{
+                    colors: innerTheme.palette.text.primary
+                  }
+                },
               },
               colors:coulor
               }}
