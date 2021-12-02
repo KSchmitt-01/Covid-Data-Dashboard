@@ -46,7 +46,7 @@ def isu_parse_faculty_positives():
     print(total_positives)
     positives = {
         'Total': total_positives,
-        'Description': "Confirmed Positive Faculty or Staff Cases"
+        'Description': "Confirmed positive faculty or staff cases"
     }
     return json.dumps(positives)
 
