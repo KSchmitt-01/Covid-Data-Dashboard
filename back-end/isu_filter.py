@@ -30,7 +30,6 @@ def isu_parse_cases_since_july():
 
 def isu_parse_student_positives():
     isumain = dfDictisu['isu_1770627829']
-    #total_positives = int(isumain['Student'].tail(1))
     total_positives =  int(get_last_value(isumain, 'Student'))
     print(total_positives)
     positives = {
@@ -41,7 +40,6 @@ def isu_parse_student_positives():
 
 def isu_parse_faculty_positives():
     isumain = dfDictisu['isu_1770627829']
-    #total_positives = int(isumain['Faculty/Staff'].tail(1))
     total_positives = int(get_last_value(isumain, 'Faculty/Staff'))
     print(total_positives)
     positives = {
@@ -52,7 +50,6 @@ def isu_parse_faculty_positives():
 
 def isu_parse_new_cases():
     isumain= dfDictisu['isu_0']
-    #most_recent = int(isumain['New Cases on Campus'].tail(1))
     most_recent =  int(get_last_value(isumain, 'New cases on campus'))
     positives = {
         "Weekly": most_recent,
