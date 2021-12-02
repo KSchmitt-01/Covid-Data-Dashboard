@@ -38,7 +38,7 @@ var vaccinePieChartOptions = {
 };
 
 //ISU
-var TotalByLocationPieChartOptions = {
+var totalByLocationPieChartOptions = {
   title:{
     text: "Total Cases - July 8th to Present",
     align: 'Center',
@@ -74,7 +74,7 @@ function GraphWrapper({selection}) {
   }
   else
   {
-    pieChartOptions = TotalByLocationPieChartOptions;
+    pieChartOptions = totalByLocationPieChartOptions;
   }
   
   return (

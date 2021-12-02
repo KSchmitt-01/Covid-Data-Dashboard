@@ -1,5 +1,7 @@
 import React, {useState, useEffect } from "react";
 import Chart from "react-apexcharts";
+import Paper from '@mui/material/Paper'
+import Box from '@mui/material/Box'
 
 function PieChart({selection, options}) {
   const[occupants, setOccupants] = useState([50,50]);
@@ -20,19 +22,20 @@ function PieChart({selection, options}) {
     }, [route, selection]);
 
     return (
-      <div className="app">
-        <div className="row">
-          <div className="mixed-chart">
-
-            <Chart
-              options={options}
-              series={occupants}
-              type={'pie'}
-              width="500"
-            />
-          </div>
-        </div>
-      </div>
+      <Box  sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        marginTop: '25px'
+      }}>
+        <Paper elevation={3} sx={{width: '100%'}}>
+          <Chart
+            options={options}
+            series={occupants}
+            type={'pie'}
+            width="100%"
+          />
+        </Paper>
+      </Box>
     );
   }
 

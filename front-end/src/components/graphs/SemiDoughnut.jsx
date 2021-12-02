@@ -1,5 +1,8 @@
 import React, {useState, useEffect } from "react";
 import Chart from "react-apexcharts";
+import Paper from '@mui/material/Paper'
+import Box from '@mui/material/Box'
+
 
 //By default colors are white and black
 var chosenColors = ["#000000", "#FFFFFF"];
@@ -34,42 +37,43 @@ function SemiDoughnut({selection}) {
     }, [route, selection]);
 
     return (
-      <div className="app">
-        <div className="row">
-          <div className="mixed-chart">
-            <Chart
-              options={{
-                colors: colors,
-                title: {
-                  text: title,
-                  align: 'Center',
-                  style: {
-                    fontSize:  '24px',
-                    fontWeight:  'bold',
-                    color:  '#263238'
-                  },
+      <Box  sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+      }}>
+        <Paper elevation={3} Paper sx={{width: '100%'}}>
+          <Chart
+            options={{
+              colors: colors,
+              title: {
+                text: title,
+                align: 'Center',
+                style: {
+                  fontSize:  '24px',
+                  fontWeight:  'bold',
+                  color:  '#263238'
                 },
-                labels: labels,
-                responsive: [{
-                  breakpoint: 480,
-                  options: {
-                    chart: {
-                      width: 200
-                    },
-                    legend: {
-                      position: 'bottom'
-                    }
+              },
+              labels: labels,
+              responsive: [{
+                breakpoint: 480,
+                options: {
+                  chart: {
+                    width: 200
+                  },
+                  legend: {
+                    position: 'bottom'
                   }
-                }]
-              }}
-              series={occupants}
-              labels={['test1', 'test2']}
-              type={'donut'}
-              width="500"
-            />
-          </div>
-        </div>
-      </div>
+                }
+              }]
+            }}
+            series={occupants}
+            labels={['test1', 'test2']}
+            type={'donut'}
+            width="100%"
+          />
+        </Paper>
+      </Box>
     );
   }
 
