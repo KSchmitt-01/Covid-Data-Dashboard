@@ -54,5 +54,10 @@ def test2():
     return test_def()
 
 @app.route('/bsu_parse_Vacination_Table')
-def gettabledata():
+def get_large_table_data():
     return bsu_parse_Vacination_Table()
+
+@app.route('/bsu_Vacination_Table_Small')
+def get_small_Table_Data():
+    return bsu_parse_Vacination_Table_Small()
+
