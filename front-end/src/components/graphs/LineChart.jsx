@@ -42,8 +42,6 @@ function LineChart({selection, options}) {
         });
     }, [route, selection]);
 
-
-
   return (
     <Box  sx={{
       display: 'flex',

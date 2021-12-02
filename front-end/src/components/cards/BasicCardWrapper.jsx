@@ -4,7 +4,6 @@ import PageContainer from '../PageContainer';
 import BasicCard from './BasicCard';
 import Paper from '@mui/material/Paper'
 
-
 const useStyles = makeStyles({
   root: {
        height: '180px',
@@ -12,7 +11,6 @@ const useStyles = makeStyles({
        justifyContent: 'space-evenly',
     }
 });
-
 
 function BasicCardWrapper({selection}) {
     const classes = useStyles();
@@ -84,13 +82,13 @@ function BasicCardWrapper({selection}) {
   }, [route4, selection]);
 
   return (
-  <Paper elevation={3} backgroundColor={'red'}>
-    <PageContainer className={`${classes.root}`}>
-        <BasicCard value={route1Value} description={route1Description}/>
-        <BasicCard value={route2Value} description={route2Description}/>
-        <BasicCard value={route3Value} description={route3Description}/>
-        <BasicCard value={route4Value} description={route4Description}/>
-    </PageContainer>
+    <Paper elevation={3} >
+      <PageContainer className={`${classes.root}`}>
+          <BasicCard value={route1Value} description={route1Description}/>
+          <BasicCard value={route2Value} description={route2Description}/>
+          <BasicCard value={route3Value} description={route3Description}/>
+          <BasicCard value={route4Value} description={route4Description}/>
+      </PageContainer>
     </Paper>
   );
 }
