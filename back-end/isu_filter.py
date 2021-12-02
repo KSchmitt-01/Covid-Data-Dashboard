@@ -53,7 +53,7 @@ def isu_parse_faculty_positives():
 def isu_parse_new_cases():
     isumain= dfDictisu['isu_0']
     #most_recent = int(isumain['New Cases on Campus'].tail(1))
-    most_recent =  int(get_last_value(isumain, 'New Cases on Campus'))
+    most_recent =  int(get_last_value(isumain, 'New cases on campus'))
     positives = {
         "Weekly": most_recent,
         'Description': "Positive campus tests this week"
