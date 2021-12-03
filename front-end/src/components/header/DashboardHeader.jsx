@@ -16,7 +16,7 @@ function DashboardHeader({updateSchool,theme}) {
     return (
       <Box sx={{ display: 'flex'}}>
         <AppBar className={classes.root} color="primary" position="absolute">
-            <Typography variant="h2" color={theme.palette.text.primary}>
+            <Typography variant="h3" color="white" fontWeight="bold">
               COVID-19 DATA DASHBOARD
             </Typography>
             <SchoolComboBox updateSelection={updateSchool} iTheme={theme}/>
