@@ -14,7 +14,6 @@ const useStyles = makeStyles({
 
 function BasicCardWrapper({selection}) {
     const classes = useStyles();
-
     const[route1Value, setRoute1Value] = useState(0);
     const[route1Description, setRoute1Description] = useState('');
     const[route2Value, setRoute2Value] = useState(0);
@@ -25,28 +24,23 @@ function BasicCardWrapper({selection}) {
     const[route4Description, setRoute4Description] = useState('');
 
     let route1 = '/school-year-cases';
-    if(selection === "Boise State University"){
-      route1 = '/school-year-cases';
-    } else{
-      route1 = '/another-test-route';
-    }
     let route2 = '/weekly-campus-cases';
-    if(selection === "Boise State University"){
-      route2 = '/weekly-campus-cases';
-    } else{
-      route2 = '/weekly-campus-cases';
-    }
     let route3 = '/weekly-positive-tests';
-    if(selection === "Boise State University"){
-      route3 = '/weekly-positive-tests';
-    } else{
-      route3 = '/weekly-positive-tests';
-    }
     let route4 = '/weekly-total-tests';
-    if(selection === "Boise State University"){
-      route4 = '/weekly-total-tests';
-    } else{
-      route4 = '/weekly-total-tests';
+
+    switch(selection){
+      case "Idaho State University":
+        route1 = '/isu-total-pocatello-campus-cases'
+        route2 = '/isu-weekly-campus-cases';
+        route3 = '/isu-weekly-student-positive-tests'
+        route4 = '/isu-weekly-faculty-positive-tests'
+        break;
+      default:
+        route1 = '/school-year-cases';
+        route2 = '/weekly-campus-cases';
+        route3 = '/weekly-positive-tests';
+        route4 = '/weekly-total-tests';
+        break;
     }
 
   useEffect(() =>{

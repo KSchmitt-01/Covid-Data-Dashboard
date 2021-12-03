@@ -5,6 +5,7 @@ import SemiDoughnut from './graphs/SemiDoughnut';
 import PieChart from './graphs/PieChart';
 import BarChart from './graphs/BarChart';
 import BasicCardWrapper from './cards/BasicCardWrapper';
+import VaccinationTableTotal from './table/VaccinationTableTotal';
 
 function ContentWrapper({schoolSelection, theme}) {
  return (
@@ -18,8 +19,11 @@ function ContentWrapper({schoolSelection, theme}) {
       <Grid item xs={12} md={6} lg={4}>
         <SemiDoughnut selection={schoolSelection}/>
         <PieChart selection={schoolSelection} innerTheme={theme}/>
+      </Grid> 
+      <Grid item xs={12} md={5} lg={4}>
+        <VaccinationTableTotal selection={schoolSelection} />
       </Grid>
-      <Grid item xs={12} md={6} lg={8}>
+      <Grid item xs={12} md={7} lg={8}>
         <BarChart selection={schoolSelection} innerTheme={theme}/>
       </Grid>
     </Grid>

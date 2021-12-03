@@ -25,6 +25,10 @@ def get_weekly_campus_cases():
 def get_total_campus_cases():
     return bsu_parse_total_campus_cases()
 
+@app.route('/isu-total-pocatello-campus-cases')
+def isu_get_total_campus_cases():
+    return isu_parse_cases_since_july()
+
 @app.route('/school-year-cases')
 def get_total_school_year_cases():
     return bsu_parse_cases_since_school_start()
@@ -41,9 +45,21 @@ def get_total_cases_by_location():
 def get_weekly_positive_tests():
     return bsu_parse_weekly_positive_tests()
 
+@app.route('/isu-weekly-student-positive-tests')
+def isu_get_student_positive_tests():
+    return isu_parse_student_positives()
+
 @app.route('/weekly-total-tests')
 def get_weekly_total_tests():
     return bsu_parse_weekly_total_tests()
+
+@app.route('/isu-weekly-faculty-positive-tests')
+def isu_get_faculty_positive_tests():
+    return isu_parse_faculty_positives()
+
+@app.route('/isu-weekly-campus-cases')
+def get_isu_weekly_cases():
+    return isu_parse_new_cases()
 
 @app.route('/test-route')
 def test():
@@ -60,3 +76,11 @@ def get_weekly_on_campus():
 @app.route('/isu-pocatello-cases')
 def get_isu_pocatello_cases():
     return isu_parse_pocatello_week_by_week();
+@app.route('/bsu_parse_Vacination_Table')
+def get_large_table_data():
+    return bsu_parse_Vacination_Table()
+
+@app.route('/bsu_Vacination_Table_Small')
+def get_small_Table_Data():
+    return bsu_parse_Vacination_Table_Small()
+

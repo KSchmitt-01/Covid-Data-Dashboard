@@ -14,7 +14,7 @@ function DashboardHeader({updateSchool,theme}) {
     const classes = useStyles()
 
     return (
-      <Box sx={{ display: 'flex'}}>
+      <Box sx={{ display: 'flex', height:'5px'}}>
         <AppBar className={classes.root} color="primary" position="absolute">
             <Typography variant="h3" color="white" fontWeight="bold">
               COVID-19 DATA DASHBOARD

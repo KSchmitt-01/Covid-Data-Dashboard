@@ -22,7 +22,7 @@ To Install the Python dependencies run the command in the root:
 ```
 pip install -r requirements.txt
 ```
-> Note: Two terminals will be needed to run the project.
+> Note: Two terminals will be needed to run the project. It is also recommended to use a python virtual environment, however it is not required to get the project running.
 
 ## Setup Python Flask Backend
 
