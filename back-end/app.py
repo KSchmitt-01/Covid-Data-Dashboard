@@ -69,6 +69,13 @@ def test():
 def test2():
     return test_def()
 
+@app.route('/weekly-on-campus')
+def get_weekly_on_campus():
+    return bsu_parse_on_campus_by_week()
+
+@app.route('/isu-pocatello-cases')
+def get_isu_pocatello_cases():
+    return isu_parse_pocatello_week_by_week();
 @app.route('/bsu_parse_Vacination_Table')
 def get_large_table_data():
     return bsu_parse_Vacination_Table()

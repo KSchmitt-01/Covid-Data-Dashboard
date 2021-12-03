@@ -5,7 +5,7 @@ const useStyles = makeStyles({
   root: {
     display: 'flex',
     paddingLeft: '20px',
-    margin: '0 5% 0 5%',
+    margin: '0 0.5% 0 0.5%',
     height: '100%'
   },
 });

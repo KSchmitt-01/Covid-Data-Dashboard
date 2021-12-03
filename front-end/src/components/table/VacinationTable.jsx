@@ -4,14 +4,9 @@ import {useEffect, useState} from "react";
 function createTable(Date,CLIA, CLIAT, ModVacWeek, ModT, PfizVacWeek, PfiT, JJVacWeek, JJT){
     return {Date,CLIA, CLIAT, ModVacWeek, ModT, PfizVacWeek, PfiT, JJVacWeek, JJT};
 }
-
-
-
- let rows = []
-
+let rows = []
 
 export default function VacinationTable() {
-
 
   let [test, setTests] = useState([]);
 

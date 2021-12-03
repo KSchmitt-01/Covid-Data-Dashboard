@@ -84,7 +84,7 @@ def test_def():
 def isu_parse_week_by_week():
     #fetches the main sheet out of the bsu google sheet
     isu = dfDictisu['isu_0']
-    #gets the data coulmums for Date and weekly cases
+    #gets the data columns for Date and weekly cases
     isuDateCase = isu.values
 
     z = 0
@@ -105,3 +105,25 @@ def isu_parse_week_by_week():
     rstring += "]"
     return rstring
 
+def isu_parse_pocatello_week_by_week():
+    isumain= dfDictisu['isu_1393139446']
+    #gets the data columns for Date and weekly cases
+    isuDateCase = isumain.values
+
+    z = 0
+
+    length = len(isuDateCase)
+
+    rstring = "["
+
+    for i in isuDateCase:
+        rstring+='{"date": "'+i[0]+'",'
+        rstring+='"cases": '+str(i[1])
+        if z+1 == length:
+            rstring += '}'
+        else:
+            rstring += '},'
+        z+=1
+
+    rstring += "]"
+    return rstring
