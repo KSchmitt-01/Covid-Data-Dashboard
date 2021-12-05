@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     }
 });
 
-function BasicCardWrapper({selection}) {
+function BottomCardWrapper({selection}) {
     const classes = useStyles();
     const[route1Value, setRoute1Value] = useState(0);
     const[route1Description, setRoute1Description] = useState('');
@@ -23,25 +23,10 @@ function BasicCardWrapper({selection}) {
     const[route4Value, setRoute4Value] = useState(0);
     const[route4Description, setRoute4Description] = useState('');
 
-    let route1 = '/school-year-cases';
-    let route2 = '/weekly-campus-cases';
-    let route3 = '/weekly-positive-tests';
-    let route4 = '/weekly-total-tests';
-
-    switch(selection){
-      case "Idaho State University":
-        route1 = '/isu-total-pocatello-campus-cases'
-        route2 = '/isu-weekly-campus-cases';
-        route3 = '/isu-weekly-student-positive-tests'
-        route4 = '/isu-weekly-faculty-positive-tests'
-        break;
-      default:
-        route1 = '/school-year-cases';
-        route2 = '/weekly-campus-cases';
-        route3 = '/weekly-positive-tests';
-        route4 = '/weekly-total-tests';
-        break;
-    }
+    let route1 = '/bsu_isolation_bed_count'
+    let route2 = '/bsu_parse_weekly_oncampus_cases'
+    let route3 = '/bsu_parse_weekly_offcampus_cases'
+    let route4 = 'bsu_parse_weekly_faculty_cases'
 
   useEffect(() =>{
     fetch(route1).then(res => res.json()).then(data =>
@@ -54,7 +39,7 @@ function BasicCardWrapper({selection}) {
   useEffect(() =>{
     fetch(route2).then(res => res.json()).then(data =>
         {
-          setRoute2Value(data.Weekly);
+          setRoute2Value(data.Total);
           setRoute2Description(data.Description);
         });
   }, [route2, selection]);
@@ -75,16 +60,23 @@ function BasicCardWrapper({selection}) {
         });
   }, [route4, selection]);
 
-  return (
-    <Paper elevation={3} >
-      <PageContainer className={`${classes.root}`}>
-          <BasicCard value={route1Value} description={route1Description}/>
-          <BasicCard value={route2Value} description={route2Description}/>
-          <BasicCard value={route3Value} description={route3Description}/>
-          <BasicCard value={route4Value} description={route4Description}/>
-      </PageContainer>
-    </Paper>
-  );
+  if(selection === "Boise State University")
+  {
+    return (
+        <Paper elevation={3}>
+            <PageContainer className={`${classes.root}`}>
+                <BasicCard value={route1Value} description={route1Description}/>
+                <BasicCard value={route2Value} description={route2Description}/>
+                <BasicCard value={route3Value} description={route3Description}/>
+                <BasicCard value={route4Value} description={route4Description}/>
+            </PageContainer>
+        </Paper>
+    );
+  } else{
+    return(
+        <div></div>
+    );
+  }
 }
 
-export default BasicCardWrapper;
+export default BottomCardWrapper;
