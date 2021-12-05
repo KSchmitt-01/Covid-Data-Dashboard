@@ -30,36 +30,29 @@ def isu_parse_cases_since_july():
 
 def isu_parse_student_positives():
     isumain = dfDictisu['isu_1770627829']
-    #total_positives = int(isumain['Student'].tail(1))
     total_positives =  int(get_last_value(isumain, 'Student'))
-    print(total_positives)
     positives = {
         'Total': total_positives,
-        'Description': "Confirmed Positive Student Cases"
+        'Description': "Confirmed positive student cases"
     }
     return json.dumps(positives)
 
 def isu_parse_faculty_positives():
     isumain = dfDictisu['isu_1770627829']
-    #total_positives = int(isumain['Faculty/Staff'].tail(1))
     total_positives = int(get_last_value(isumain, 'Faculty/Staff'))
-    print(total_positives)
     positives = {
         'Total': total_positives,
-        'Description': "Confirmed Positive Faculty or Staff Cases"
+        'Description': "Confirmed positive faculty or staff cases"
     }
     return json.dumps(positives)
 
 def isu_parse_new_cases():
     isumain= dfDictisu['isu_0']
-    #most_recent = int(isumain['New Cases on Campus'].tail(1))
-    most_recent =  int(get_last_value(isumain, 'New Cases on Campus'))
+    most_recent =  int(get_last_value(isumain, 'New cases on campus'))
     positives = {
         "Weekly": most_recent,
         'Description': "Positive campus tests this week"
     }
-
-    print(positives)
     return json.dumps(positives)
 
 def isu_parse_total_cases_by_location():
@@ -91,7 +84,7 @@ def test_def():
 def isu_parse_week_by_week():
     #fetches the main sheet out of the bsu google sheet
     isu = dfDictisu['isu_0']
-    #gets the data coulmums for Date and weekly cases
+    #gets the data columns for Date and weekly cases
     isuDateCase = isu.values
 
     z = 0
@@ -112,3 +105,25 @@ def isu_parse_week_by_week():
     rstring += "]"
     return rstring
 
+def isu_parse_pocatello_week_by_week():
+    isumain= dfDictisu['isu_1393139446']
+    #gets the data columns for Date and weekly cases
+    isuDateCase = isumain.values
+
+    z = 0
+
+    length = len(isuDateCase)
+
+    rstring = "["
+
+    for i in isuDateCase:
+        rstring+='{"date": "'+i[0]+'",'
+        rstring+='"cases": '+str(i[1])
+        if z+1 == length:
+            rstring += '}'
+        else:
+            rstring += '},'
+        z+=1
+
+    rstring += "]"
+    return rstring

@@ -1,10 +1,13 @@
 .App {
   text-align: center;
+  position: relative;
+  height: auto;
+  background-color: white;
 }
-
+/* 
 .main {
   padding-top: 100px;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -38,4 +41,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
 }

@@ -84,3 +84,18 @@ def get_weekly_offcampus_cases_count():
 @app.route('/bsu_parse_weekly_faculty_cases')
 def get_weekly_faculty_cases_count():
     return bsu_parse_weekly_faculty_cases()
+@app.route('/weekly-on-campus')
+def get_weekly_on_campus():
+    return bsu_parse_on_campus_by_week()
+
+@app.route('/isu-pocatello-cases')
+def get_isu_pocatello_cases():
+    return isu_parse_pocatello_week_by_week();
+@app.route('/bsu_parse_Vacination_Table')
+def get_large_table_data():
+    return bsu_parse_Vacination_Table()
+
+@app.route('/bsu_Vacination_Table_Small')
+def get_small_Table_Data():
+    return bsu_parse_Vacination_Table_Small()
+
