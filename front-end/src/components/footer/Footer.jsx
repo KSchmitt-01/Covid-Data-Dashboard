@@ -17,7 +17,7 @@ function Footer({mode}) {
                     </Typography>
                 </Grid>
                 <Grid item xs={8} md={8} lg={8}>
-                    <Typography align="center" variant="h6" sx={{color: 'white'}}>
+                    <Typography align="right" variant="h6" sx={{color: 'white'}}>
                         Created by: Andrew Haddon, Matthew Johnson, Kincaid Schmitt, Alyssa West
                     </Typography>
                 </Grid>
