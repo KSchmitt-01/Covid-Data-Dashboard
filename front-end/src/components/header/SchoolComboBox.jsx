@@ -8,7 +8,7 @@ export default function SchoolComboBox({updateSelection, iTheme}) {
     option: {
       "&:hover": {
         backgroundColor: iTheme.palette.action.active
-      }
+      },
     },
   });
 
@@ -51,6 +51,7 @@ export default function SchoolComboBox({updateSelection, iTheme}) {
             />
         );
         }}
+        sx={{marginLeft: '100px'}}
     />
   );
 }

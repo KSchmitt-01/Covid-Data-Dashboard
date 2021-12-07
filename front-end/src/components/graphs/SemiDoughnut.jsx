@@ -3,28 +3,30 @@ import Chart from "react-apexcharts";
 import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
 
-function SemiDoughnut({selection}) {
+function SemiDoughnut({selection, innerTheme}) {
   const[occupants, setOccupants] = useState([50,50]);
-  const[title, setTitle] = useState('Isolation Capacity');
-  const[labels, setLabels] = useState(["Occupied Beds (%)", "Available Beds (%)"]);
-  const[colors, setColors] = useState(["#0033A0", "#D64309"]);
 
+  let coulor = ["#0033A0", "#D64309"];
+  let chartTitle = "Isolation Capacity";
+  let labels =["Occupied Bed (%)", "Avaliable Beds (%)"];
   let route = '/isolation-bed-occupants';
-  if(selection === "Boise State University"){
+
+  if(selection === "Idaho State University"){
+    route = '/isu-cases-by-category';
+    coulor = ["#828282", "#f69240"];
+    chartTitle = "Total Cases by Category";
+    labels =["Students", "Faculty/Staff"];
+  } else{
     route = '/isolation-bed-occupants';
-  } else if(selection === "Idaho State University"){
-    route = '/test-route';
-  }else{
-    route = '/test-route';
+    coulor = ["#0033A0", "#D64309"];
+    chartTitle = "Isolation Capacity";
+    labels =["Occupied Bed (%)", "Avaliable Beds (%)"];
   }
 
   useEffect(() =>
     {fetch(route).then(res => res.json()).then(data =>
         {
           setOccupants(data.Total);
-          setTitle(data.Title);
-          setLabels(data.Labels);
-          setColors(data.Colors);
         });
     }, [route, selection]);
 
@@ -36,15 +38,32 @@ function SemiDoughnut({selection}) {
         <Paper elevation={3} sx={{width: '100%'}}>
           <Chart
             options={{
-              colors: colors,
+              colors: coulor,
               title: {
-                text: title,
+                text: chartTitle,
                 align: 'Center',
                 style: {
                   fontSize:  '24px',
                   fontWeight:  'bold',
-                  color:  'primary'
+                  color:  innerTheme.palette.text.primary
                 },
+              },
+              legend:{
+                fontSize: '14px',
+                position: 'right',
+                labels: {
+                  colors: innerTheme.palette.text.primary
+                }
+              },
+              tooltip:{
+                style:{
+                  fontSize: '18px'
+                }
+              },
+              dataLabels:{
+                style:{
+                  fontSize: '18px'
+                }
               },
               labels: labels,
               responsive: [{
@@ -53,9 +72,6 @@ function SemiDoughnut({selection}) {
                   chart: {
                     width: 200
                   },
-                  legend: {
-                    position: 'bottom'
-                  }
                 }
               }]
             }}

@@ -61,8 +61,8 @@ def isu_get_faculty_positive_tests():
 def get_isu_weekly_cases():
     return isu_parse_new_cases()
 
-@app.route('/test-route')
-def test():
+@app.route('/isu-cases-by-category')
+def isu_cases_by_catergory():
     return isu_parse_cases_by_category()
 
 @app.route('/another-test-route')

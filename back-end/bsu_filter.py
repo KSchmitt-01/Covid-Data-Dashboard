@@ -53,9 +53,6 @@ def bsu_parse_isolation_capacity():
 
     occupants = {
         "Total": [isolationBedOccupants, (BSU_ISOLATION_BEDS-isolationBedOccupants)], #90 total isolation beds
-        "Title": "Isolation Capacity",
-        "Labels": ["Occupied Beds (%)", "Avaliable Beds (%)"],
-        "Colors": [BSU_BLUE, BSU_ORANGE]
     }
     return json.dumps(occupants)
 

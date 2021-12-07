@@ -11,11 +11,7 @@ def isu_parse_cases_by_category():
     student_cases = int(isumain.iloc[0,1])
     faculty_cases = int(isumain.iloc[1,1])
     cases = {
-        'Total': [student_cases, faculty_cases],
-        'Title': 'Total Cases by Category',
-        "Labels": ["Students", "Faculty/Staff"],
-        "Colors": [ISU_GREY, ISU_LIGHT_ORANGE]
-
+        'Total': [student_cases, faculty_cases]
     }
     return json.dumps(cases)
 
