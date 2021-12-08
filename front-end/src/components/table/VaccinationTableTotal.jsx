@@ -6,7 +6,7 @@ function createTable(name, weekly, total){
 }
 let rows = []
 
-export default function VaccinationTableTotal({selection}) {
+export default function VaccinationTableTotal({selection, innerTheme}) {
   const [antiAntiVaxers, setantiAntiVaxers] = useState([]);
   let isBsu = true;
   if(selection === "Boise State University"){
@@ -15,6 +15,8 @@ export default function VaccinationTableTotal({selection}) {
     isBsu = false;
   }
 
+  console.log("innerTheme ");
+  console.log(innerTheme.palette.primary.main)
   useEffect(() =>
     {fetch('/bsu_Vacination_Table_Small').then(res => res.json()).then(data =>
         {
@@ -30,8 +32,8 @@ export default function VaccinationTableTotal({selection}) {
   rows = antiAntiVaxers
   if(isBsu){
     return(
-        <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 0 }} aria-label="simple table">
+        <TableContainer >
+      <Table sx={{ minWidth: 0, backgroundColor: innerTheme.palette.primary.main, color: innerTheme.palette.text.primary}}aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell component="th" scope="row">Vaccine Type</TableCell>

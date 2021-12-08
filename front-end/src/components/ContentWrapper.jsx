@@ -9,6 +9,8 @@ import BottomCardWrapper from './cards/BottomCardWrapper';
 import VaccinationTableTotal from './table/VaccinationTableTotal';
 
 function ContentWrapper({schoolSelection, theme}) {
+  console.log("wrapper inner theme");
+  console.log(theme)
  return (
     <Grid container justifyContent="center" spacing={3}>
       <Grid item xs={12} md={12} lg={12}>
@@ -22,7 +24,7 @@ function ContentWrapper({schoolSelection, theme}) {
         <PieChart selection={schoolSelection} innerTheme={theme}/>
       </Grid> 
       <Grid item xs={12} md={5} lg={4}>
-        <VaccinationTableTotal selection={schoolSelection} />
+        <VaccinationTableTotal  selection={schoolSelection} innerTheme={theme}/>
       </Grid>
       <Grid item xs={12} md={7} lg={8}>
         <BarChart selection={schoolSelection} innerTheme={theme}/>
