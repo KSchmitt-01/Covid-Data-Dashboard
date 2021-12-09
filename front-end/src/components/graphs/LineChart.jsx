@@ -9,16 +9,15 @@ function LineChart({selection, innerTheme}) {
 
   let coulor = ['#0033A0']
   let route = '/bsuweekdata';
-  let chartTitle = "Bsu Cases Per Week"
+  let xAxisTitle = "Date"
+  let chartTitle = "Total Cases Week by Week"
 
   if (selection === "Boise State University") {
     route = '/bsuweekdata';
     coulor = ['#0033A0'];
-    chartTitle = "BSU Cases Per Week"
   } else {
     route = '/isuweekdata';
     coulor = ['#F47920'];
-    chartTitle = "ISU Cases Per Week";
   }
 
   useEffect(() =>
@@ -46,6 +45,14 @@ function LineChart({selection, innerTheme}) {
       <Paper sx={{width: '100%', height: '100%'}}>
       <Chart
           options={{
+            title:{
+              text: chartTitle,
+              align: 'center',
+              style: {
+                fontSize: '24px',
+                color:  innerTheme.palette.text.primary
+              }
+            },
             chart: {
                 id: "basic-bar"
               },
@@ -59,7 +66,7 @@ function LineChart({selection, innerTheme}) {
                 }
               },
               title: {
-                text: chartTitle,
+                text: xAxisTitle,
                 align: 'Center',
                 margin: 10,
                 offsetX: 0,
