@@ -18,7 +18,7 @@ function BarChart({selection, innerTheme}) {
   } else {
     route = '/isu-pocatello-cases';
     coulor = ['#F47920'];
-    chartTitle = "Pocatello Cases";
+    chartTitle = "Pocatello,ID Cases Per Week";
   }
 
   useEffect(() => {
