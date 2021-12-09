@@ -23,7 +23,7 @@ export default function BasicCard({value, description}) {
       display: 'flex',
       flexWrap: 'wrap',
     }}>
-      <Card variant={'outlined'} className={`${classes.root}`} sx={{ width: 225, height: 175}}>
+      <Card raised={true} className={`${classes.root}`} sx={{ width: 225, height: 175}}>
         <CardContent className={`${classes.content}`} style={{paddingTop: '50px'}}>
             <Typography variant="h3">
               {value}

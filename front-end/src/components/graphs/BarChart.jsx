@@ -9,16 +9,17 @@ function BarChart({selection, innerTheme}) {
 
   let coulor = ["#D64309"]
   let route = '/weekly-on-campus';
-  let chartTitle = "Bsu On-Campus Cases Per Week"
+  let chartTitle = "On-Campus Student Cases Week by Week";
+  let xAxisTitle = "Date";
 
   if (selection === "Boise State University") {
     route = '/weekly-on-campus';
     coulor = ["#D64309"];
-    chartTitle = "BSU On-Campus Cases Per Week"
+    chartTitle = "On-Campus Student Cases Week by Week"
   } else {
     route = '/isu-pocatello-cases';
     coulor = ['#F47920'];
-    chartTitle = "Pocatello Cases";
+    chartTitle = "Total Cases Week by Week in Pocatello,ID";
   }
 
   useEffect(() => {
@@ -51,10 +52,18 @@ function BarChart({selection, innerTheme}) {
               chart: {
                   id: "simple-bar"
               },
+              title: {
+                text: chartTitle,
+                align: 'center',
+                style: {
+                  fontSize: '24px',
+                  color:  innerTheme.palette.text.primary
+                }
+              },
               xaxis: {
                 categories: dates,
                 title: {
-                  text: chartTitle,
+                  text: xAxisTitle,
                   align: 'Center',
                   margin: 10,
                   offsetX: 0,
