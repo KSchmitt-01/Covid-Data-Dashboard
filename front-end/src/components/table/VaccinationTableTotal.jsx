@@ -17,7 +17,7 @@ export default function VaccinationTableTotal({selection, innerTheme}) {
     isBsu = false;
   }
 
-  var color = '#000000';
+  var color = '#ffffff';
   if(innerTheme.palette.mode === 'dark')
   {
     color = '#242424';
@@ -52,7 +52,7 @@ export default function VaccinationTableTotal({selection, innerTheme}) {
   rows = antiAntiVaxers
   if(isBsu){
     return(
-        <Paper elevation={3}>
+        <Paper>
       <Table sx={{ minWidth: 0}}aria-label="simple table">
           <TableHead>
             <TableRow>
