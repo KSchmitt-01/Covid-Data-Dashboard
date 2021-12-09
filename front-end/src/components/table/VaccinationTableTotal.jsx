@@ -33,10 +33,6 @@ export default function VaccinationTableTotal({selection, innerTheme}) {
       color: innerTheme.palette.text.primary,
     }
   }));
-
-
-  console.log("innerTheme ");
-  console.log(innerTheme)
   useEffect(() =>
     {fetch('/bsu_Vacination_Table_Small').then(res => res.json()).then(data =>
         {

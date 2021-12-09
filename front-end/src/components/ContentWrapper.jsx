@@ -9,8 +9,6 @@ import BottomCardWrapper from './cards/BottomCardWrapper';
 import VaccinationTableTotal from './table/VaccinationTableTotal';
 
 function ContentWrapper({schoolSelection, theme}) {
-  console.log("wrapper inner theme");
-  console.log(theme)
  return (
     <Grid container justifyContent="center" spacing={3}>
       <Grid item xs={12} md={12} lg={12}>
