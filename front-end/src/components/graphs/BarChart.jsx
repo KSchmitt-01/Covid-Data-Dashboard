@@ -7,6 +7,9 @@ function BarChart({selection, innerTheme}) {
     const [dates, setDates] = useState([]);
     const [cases, setCases] = useState([]);
 
+  console.log("bar")
+  console.log(innerTheme)
+
   let coulor = ["#D64309"]
   let route = '/weekly-on-campus';
   let chartTitle = "Bsu On-Campus Cases Per Week"

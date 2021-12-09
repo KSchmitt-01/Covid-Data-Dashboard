@@ -1,5 +1,7 @@
-import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
+import {Paper, Table, TableBody, TableCell, TableHead, TableRow} from "@material-ui/core";
 import {useEffect, useState} from "react";
+import { styled } from '@mui/material/styles';
+import { tableCellClasses } from '@mui/material/TableCell';
 
 function createTable(name, weekly, total){
     return {name, weekly, total};
@@ -15,8 +17,26 @@ export default function VaccinationTableTotal({selection, innerTheme}) {
     isBsu = false;
   }
 
+  var color = '#000000';
+  if(innerTheme.palette.mode === 'dark')
+  {
+    color = '#242424';
+  }
+
+  const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+      backgroundColor: color,
+      color: innerTheme.palette.text.primary,
+    },
+    [`&.${tableCellClasses.body}`]: {
+      backgroundColor: color,
+      color: innerTheme.palette.text.primary,
+    }
+  }));
+
+
   console.log("innerTheme ");
-  console.log(innerTheme.palette.primary.main)
+  console.log(innerTheme)
   useEffect(() =>
     {fetch('/bsu_Vacination_Table_Small').then(res => res.json()).then(data =>
         {
@@ -32,13 +52,13 @@ export default function VaccinationTableTotal({selection, innerTheme}) {
   rows = antiAntiVaxers
   if(isBsu){
     return(
-        <TableContainer >
-      <Table sx={{ minWidth: 0, backgroundColor: innerTheme.palette.primary.main, color: innerTheme.palette.text.primary}}aria-label="simple table">
+        <Paper elevation={3}>
+      <Table sx={{ minWidth: 0}}aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell component="th" scope="row">Vaccine Type</TableCell>
-              <TableCell align="right">Weekly</TableCell>
-              <TableCell align="right">Total</TableCell>
+              <StyledTableCell component="th" scope="row">Vaccine Type</StyledTableCell>
+              <StyledTableCell align="right">Weekly</StyledTableCell>
+              <StyledTableCell align="right">Total</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -47,14 +67,14 @@ export default function VaccinationTableTotal({selection, innerTheme}) {
                 key={row.name}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-                <TableCell component="th" scope="row">{row.name}</TableCell>
-                <TableCell align="right">{row.weekly}</TableCell>
-                <TableCell align="right">{row.total}</TableCell>
+                <StyledTableCell component="th" scope="row">{row.name}</StyledTableCell>
+                <StyledTableCell align="right">{row.weekly}</StyledTableCell>
+                <StyledTableCell align="right">{row.total}</StyledTableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
+      </Paper>
     );
   } else{
     return(

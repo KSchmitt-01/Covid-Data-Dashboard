@@ -8,7 +8,7 @@ import Footer from './footer/Footer';
 
 function DashboardView() {
  const [schoolSelection, setSchoolSelection] = useState('Boise State University');
- const [isDarkMode, setIsDarkMode] = useState(true);
+ const [isDarkMode, setIsDarkMode] = useState(false);
  const theme = createTheme({
   palette: {
     mode: isDarkMode? 'dark': 'light', //we can control light and dark theme by changing this
