@@ -38,7 +38,7 @@ export default function SchoolSelectionBox({updateSelection}) {
             }
           }}
           input={<UseStyles />}
-          sx={{width: 200}}
+          sx={{width: 200, backgroundColor: 'primary'}}
           >
           <MenuItem value={"Boise State University"}>Boise State University</MenuItem>
           <MenuItem value={"Idaho State University"}>Idaho State University</MenuItem>
