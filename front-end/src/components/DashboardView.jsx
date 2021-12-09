@@ -11,7 +11,7 @@ function DashboardView() {
  const [isDarkMode, setIsDarkMode] = useState(false);
  const theme = createTheme({
   palette: {
-    mode: isDarkMode? 'dark': 'light', //we can control light and dark theme by changing this
+    mode: isDarkMode? 'dark': 'light', //controls light vs dark theme
   },
 });
 

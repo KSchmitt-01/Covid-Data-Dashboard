@@ -4,8 +4,8 @@ import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
 
 function BarChart({selection, innerTheme}) {
-    const [dates, setDates] = useState([]);
-    const [cases, setCases] = useState([]);
+  const [dates, setDates] = useState([]);
+  const [cases, setCases] = useState([]);
 
   let coulor = ["#D64309"]
   let route = '/weekly-on-campus';
