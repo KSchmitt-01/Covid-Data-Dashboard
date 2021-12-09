@@ -8,21 +8,21 @@ export default function SchoolComboBox({updateSelection, iTheme}) {
     option: {
       "&:hover": {
         backgroundColor: iTheme.palette.action.active
-      },
-    },
+      }
+    }
   });
 
   const dataOptions = [
     { label: 'Boise State University' },
     { label: 'Idaho State University'},
-];
+  ];
   return (
     <Autocomplete
         id="combo-box-demo"
         options={dataOptions}
         defaultValue={dataOptions[0]}
         classes={{
-            option: styles.option
+            option: styles.option,
         }}
         getOptionLabel={(option) => option.label}
         onChange={(event, newSelection) => {
@@ -36,7 +36,7 @@ export default function SchoolComboBox({updateSelection, iTheme}) {
         renderOption={(props, option) => {
             const { label } = option;
             return (
-                <span {...props} >
+                <span {...props}>
                 {label}
                  </span>
             );

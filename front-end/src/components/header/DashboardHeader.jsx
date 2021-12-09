@@ -19,14 +19,14 @@ function DashboardHeader({updateSchool, updateDarkMode, mode, theme}) {
     const classes = useStyles()
 
     return (
-      <Box sx={{ display: 'fixed', height:'5px'}}>
+      <Box sx={{ display: 'absolute', height:'5px'}}>
         <AppBar className={classes.root} color="primary" position="absolute">
             <Typography variant="h3" color="white" fontWeight="bold">
               COVID-19 DATA DASHBOARD
             </Typography>
             <SchoolComboBox updateSelection={updateSchool} iTheme={theme}/>
             <FormGroup>
-              <FormControlLabel control={<Switch name="toggleDark" checked={mode} onChange={handleModeChange}/>} label="Dark Mode" sx={{color: theme.palette.text.primary, marginLeft: '100px'}}/>
+              <FormControlLabel control={<Switch name="toggleDark" checked={mode} onChange={handleModeChange}/>} label="Dark Mode" sx={{color: 'white', marginLeft: '100px'}}/>
             </FormGroup>
         </AppBar>
       </Box>
