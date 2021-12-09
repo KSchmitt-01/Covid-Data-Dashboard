@@ -22,7 +22,7 @@ function DashboardView() {
           sx={{
             backgroundColor: theme.palette.background.default,
             flexGrow: 1,
-            marginTop: '108px',
+            marginTop: '140px',
             paddingBottom: '150px',
             paddingTop: '50px'
           }}>
