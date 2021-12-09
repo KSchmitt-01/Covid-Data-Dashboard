@@ -64,6 +64,7 @@ function BottomCardWrapper({selection}) {
   {
     return (
         <Paper elevation={3}>
+           <h1>Weekly Information</h1>
             <PageContainer className={`${classes.root}`}>
                 <BasicCard value={route1Value} description={route1Description}/>
                 <BasicCard value={route2Value} description={route2Description}/>

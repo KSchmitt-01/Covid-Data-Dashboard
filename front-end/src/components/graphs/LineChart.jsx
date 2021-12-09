@@ -3,7 +3,6 @@ import Chart from "react-apexcharts";
 import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
 
-
 function LineChart({selection, innerTheme}) {
   const [dates, setDates] = useState([]);
   const [cases, setCases] = useState([]);
@@ -27,18 +26,14 @@ function LineChart({selection, innerTheme}) {
         {
             const d = []
             const c = []
-
             for (let i = 0; i < data.length; i++) {
                 d.push(data[i].date);
                 c.push(data[i].cases);
             }
-
-        d.reverse()
-        c.reverse()
+            d.reverse()
+            c.reverse()
             setDates(d)
             setCases(c)
-
-
         });
     }, [route, selection]);
 
@@ -59,6 +54,7 @@ function LineChart({selection, innerTheme}) {
               color: innerTheme.palette.text.primary,
               labels:{
                 style:{
+                  fontSize: '13px',
                   colors: innerTheme.palette.text.primary
                 }
               },
@@ -85,9 +81,16 @@ function LineChart({selection, innerTheme}) {
               },
               labels:{
                 style:{
+                  fontSize: '15px',
                   colors: innerTheme.palette.text.primary
                 }
               },
+            },
+            tooltip:{
+              theme: innerTheme.palette.background.primary,
+              style:{
+                fontSize: '18px',
+              }
             },
             colors:coulor
           }}

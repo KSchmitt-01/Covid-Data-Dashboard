@@ -30,7 +30,7 @@ export default function VaccinationTableTotal({selection}) {
   rows = antiAntiVaxers
   if(isBsu){
     return(
-      <TableContainer component={Paper}>
+        <TableContainer component={Paper}>
         <Table sx={{ minWidth: 0 }} aria-label="simple table">
           <TableHead>
             <TableRow>

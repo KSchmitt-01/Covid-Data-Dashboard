@@ -8,7 +8,7 @@ function PieChart({selection, innerTheme}) {
 
   let coulor = ["#0033A0", "#D64309", "#d3d3d3"];
   let chartTitle = "Total Vaccines By Type";
-  let labels =["Moderna", "Pfizer", "Johnson & Johnson"]
+  let labels =["Moderna", "Pfizer", "Johnson & Johnson"];
   let route = '/total-vaccinations-per-type';
 
   if(selection === "Idaho State University"){
@@ -48,10 +48,21 @@ function PieChart({selection, innerTheme}) {
                 }
               },
               legend: {
+                fontSize: '14px',
                 position: 'right',
                 labels: {
                   colors: innerTheme.palette.text.primary
                 },
+              },
+              tooltip:{
+                style:{
+                  fontSize: '18px'
+                }
+              },
+              dataLabels:{
+                style:{
+                  fontSize:'18px'
+                }
               },
               colors: coulor,
               labels: labels,

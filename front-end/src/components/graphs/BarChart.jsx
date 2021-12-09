@@ -67,6 +67,7 @@ function BarChart({selection, innerTheme}) {
                 },
                 labels:{
                   style:{
+                    fontSize:  '13px',
                     colors: innerTheme.palette.text.primary
                   }
                 },
@@ -81,9 +82,17 @@ function BarChart({selection, innerTheme}) {
                 },
                 labels:{
                   style:{
+                    fontSize:  '15px',
                     colors: innerTheme.palette.text.primary
                   }
                 },
+              },
+              tooltip:{
+                theme: innerTheme.palette.background.primary,
+                style:{
+                  fontSize: '18px',
+                  color: innerTheme.palette.text.primary
+                }
               },
               colors:coulor
               }}

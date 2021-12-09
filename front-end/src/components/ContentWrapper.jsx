@@ -18,7 +18,7 @@ function ContentWrapper({schoolSelection, theme}) {
         <LineChart selection={schoolSelection} innerTheme={theme}/>
       </Grid>
       <Grid item xs={12} md={6} lg={4}>
-        <SemiDoughnut selection={schoolSelection}/>
+        <SemiDoughnut selection={schoolSelection} innerTheme={theme}/>
         <PieChart selection={schoolSelection} innerTheme={theme}/>
       </Grid> 
       <Grid item xs={12} md={5} lg={4}>
