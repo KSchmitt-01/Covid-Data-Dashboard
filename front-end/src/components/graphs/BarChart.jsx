@@ -24,22 +24,21 @@ function BarChart({selection, innerTheme}) {
 
   useEffect(() => {
     fetch(route).then(res => res.json()).then(data => {
-      // Dates
-      const d= []
-      // Cases
-      const c = []
-
+      const d = [];
+      const c = [];
       for (let i = 0; i < data.length; i++) {
           d.push(data[i].date);
           c.push(data[i].cases);
       }
 
-      d.reverse()
-      c.reverse()
+      if(selection === "Boise State University"){
+        d.reverse()
+        c.reverse()
+      }
       setDates(d)
       setCases(c)
-
-    })}, [route, selection]);
+    })
+  }, [route, selection]);
 
     return (
       <Box  sx={{

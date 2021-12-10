@@ -20,21 +20,22 @@ function LineChart({selection, innerTheme}) {
     coulor = ['#F47920'];
   }
 
-  useEffect(() =>
-    {fetch(route).then(res => res.json()).then(data =>
-        {
-            const d = []
-            const c = []
-            for (let i = 0; i < data.length; i++) {
-                d.push(data[i].date);
-                c.push(data[i].cases);
-            }
-            d.reverse()
-            c.reverse()
-            setDates(d)
-            setCases(c)
-        });
-    }, [route, selection]);
+  useEffect(() =>{
+    fetch(route).then(res => res.json()).then(data => {
+      const d = []
+      const c = []
+      for (let i = 0; i < data.length; i++) {
+          d.push(data[i].date);
+          c.push(data[i].cases);
+      }
+      if(selection === "Boise State University"){
+        d.reverse()
+        c.reverse()
+      }
+      setDates(d)
+      setCases(c)
+    });
+  }, [route, selection]);
 
   return (
     <Box  sx={{
