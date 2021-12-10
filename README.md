@@ -46,6 +46,14 @@ This should open a new browser with the application on localhost:3000
 
 > Note: you will get connection errors if the back-end is not started before the front-end and the default data will be used 
 
+## Common Issues and How to Fix Them
+
+If you end up getting a 500 error with an uncaught promise in the console, then the excel sheets are more than likely being updated.
+We have done what we could to mitigate this issue by grabbing the previous data when possible, but there are some fields that only have 
+the most recent data. This issue will go away when the spreadsheet has finished updating and no empty cells are left.
+
+> Note: We have noticed that the spreadsheets are often updated on Wednesday and Thursday evenings.
+
 ## Resources used to create setup
 
 - https://blog.miguelgrinberg.com/post/how-to-create-a-react--flask-project
